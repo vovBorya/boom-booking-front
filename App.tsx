@@ -1,18 +1,29 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
+import {createStackNavigator} from "@react-navigation/stack";
+import LoginPage from "./src/components/login-page";
 
 const client = new ApolloClient({
   uri: 'some-address'
 })
 
+const Stack = createStackNavigator();
+
 export default function App() {
   return (
     <ApolloProvider client={client}>
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-      </View>🚀
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen
+              name=" "
+              component={LoginPage}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
     </ApolloProvider>
   );
 }
