@@ -1,11 +1,11 @@
 import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import {Button, StyleSheet, Text, View} from 'react-native';
+import { StyleSheet } from 'react-native';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import {createStackNavigator} from "@react-navigation/stack";
-import LoginPage from "./src/components/login-page";
+import SignInPage from "./src/components/sign-in-page";
 
 const client = new ApolloClient({
   uri: 'some-address'
@@ -20,7 +20,7 @@ export default function App() {
         <Stack.Navigator>
           <Stack.Screen
               name=" "
-              component={LoginPage}
+              component={SignInPage}
           />
         </Stack.Navigator>
       </NavigationContainer>
