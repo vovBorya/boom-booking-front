@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import SignInPageView from "./sign-in-page-view";
 
-type SignInPageProps = {}
+type SignInPageProps = {
+}
 
-const SignInPage: React.FC<SignInPageProps> = ({}) => {
+const SignInPage: React.FC<SignInPageProps> = ({ navigation }) => {
 
   const [ login, setLogin ] = useState<String>('')
   const [ password, setPassword ] = useState<String>('')
@@ -15,7 +16,7 @@ const SignInPage: React.FC<SignInPageProps> = ({}) => {
   }
 
   const onSignUpClick = (): void => {
-    console.log('sign up')
+    navigation.navigate('Sign Up')
   }
 
   const onFBClick = (): void => {

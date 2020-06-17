@@ -1,11 +1,11 @@
 import React from 'react';
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
-import { StyleSheet } from 'react-native';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import {createStackNavigator} from "@react-navigation/stack";
 import SignInPage from "./src/components/pages/sign-in-page";
+import SignUpPage from "./src/components/pages/sign-up-page";
 
 const client = new ApolloClient({
   uri: 'some-address'
@@ -22,17 +22,13 @@ export default function App() {
               name=" "
               component={SignInPage}
           />
+          <Stack.Screen
+            name="Sign Up"
+            component={SignUpPage}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </ApolloProvider>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

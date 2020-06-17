@@ -1,4 +1,4 @@
-import styles from "./login-page-styles";
+import {styles} from "./sign-in-page-styles";
 import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
 import React from "react";
 
@@ -72,4 +72,3 @@ const SignInPageView: React.FC<SignInPageViewProps> = ({
 }
 
 export default SignInPageView
-
