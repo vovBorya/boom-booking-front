@@ -25,7 +25,7 @@ const SignInPageView: React.FC<SignInPageViewProps> = ({
     <View style={styles.container}>
       <Image
         style={styles.logo}
-        source={require('../../resources/img/logo.png')}
+        source={require('../../../resources/img/logo.png')}
         fadeDuration={500}
       />
       <View>
@@ -43,6 +43,7 @@ const SignInPageView: React.FC<SignInPageViewProps> = ({
             style={styles.input}
             textAlign="center"
             onChangeText={setPassword}
+            secureTextEntry={true}
           />
         </View>
         <View style={styles.enterLabelView}>
@@ -56,10 +57,10 @@ const SignInPageView: React.FC<SignInPageViewProps> = ({
         </View>
         <View style={styles.icons}>
           <TouchableOpacity activeOpacity={activityOpacity} onPress={facebookSingIn}>
-            <Image style={styles.image} source={require(`../../resources/img/FB.png`)} />
+            <Image style={styles.image} source={require(`../../../resources/img/FB.png`)} />
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={activityOpacity} onPress={googleSignIn} >
-            <Image style={styles.image} source={require('../../resources/img/google.png')} />
+            <Image style={styles.image} source={require('../../../resources/img/google.png')} />
           </TouchableOpacity>
         </View>
       </View>

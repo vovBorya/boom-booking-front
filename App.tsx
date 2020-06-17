@@ -5,7 +5,7 @@ import { StyleSheet } from 'react-native';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import {createStackNavigator} from "@react-navigation/stack";
-import SignInPage from "./src/components/sign-in-page";
+import SignInPage from "./src/components/pages/sign-in-page";
 
 const client = new ApolloClient({
   uri: 'some-address'
