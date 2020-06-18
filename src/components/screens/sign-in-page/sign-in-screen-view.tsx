@@ -1,8 +1,8 @@
-import {styles} from "./sign-in-page-styles";
+import {styles} from "./sign-in-screen-styles";
 import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
 import React from "react";
 
-type SignInPageViewProps = {
+type SignInScreenViewProps = {
   setLogin: (newString: string) => void
   setPassword: (newString: string) => void
   activityOpacity: number
@@ -12,7 +12,7 @@ type SignInPageViewProps = {
   googleSignIn: () => void
 }
 
-const SignInPageView: React.FC<SignInPageViewProps> = ({
+const SignInScreenView: React.FC<SignInScreenViewProps> = ({
                                                          setLogin,
                                                          setPassword,
                                                          activityOpacity,
@@ -71,4 +71,4 @@ const SignInPageView: React.FC<SignInPageViewProps> = ({
   )
 }
 
-export default SignInPageView
+export default SignInScreenView

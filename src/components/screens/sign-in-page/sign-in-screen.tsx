@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import SignInPageView from "./sign-in-page-view";
+import SignInScreenView from "./sign-in-screen-view";
 
-type SignInPageProps = {
+type SignInScreenProps = {
 }
 
-const SignInPage: React.FC<SignInPageProps> = ({ navigation }) => {
+const SignInScreen: React.FC<SignInScreenProps> = ({ navigation }) => {
 
   const [ login, setLogin ] = useState<String>('')
   const [ password, setPassword ] = useState<String>('')
@@ -28,7 +28,7 @@ const SignInPage: React.FC<SignInPageProps> = ({ navigation }) => {
   }
 
   return (
-    <SignInPageView
+    <SignInScreenView
       setLogin={setLogin}
       setPassword={setPassword}
       activityOpacity={ACTIVITY_OPACITY}
@@ -40,4 +40,4 @@ const SignInPage: React.FC<SignInPageProps> = ({ navigation }) => {
   )
 }
 
-export default SignInPage
+export default SignInScreen

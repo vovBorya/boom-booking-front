@@ -1,12 +1,12 @@
 import React from "react";
 import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
-import styles from "./sign-up-page-styles";
+import styles from "./sign-up-screen-styles";
 
-type SignUpPageViewProps = {
+type SignUpScreenViewProps = {
 
 }
 
-const SignUpPageView: React.FC<SignUpPageViewProps> = ({}) => {
+const SignUpScreenView: React.FC<SignUpScreenViewProps> = ({}) => {
   return(
     <View style={styles.container}>
       <Text>sign up</Text>
@@ -14,4 +14,4 @@ const SignUpPageView: React.FC<SignUpPageViewProps> = ({}) => {
   )
 }
 
-export default SignUpPageView
+export default SignUpScreenView
