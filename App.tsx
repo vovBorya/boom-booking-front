@@ -1,27 +1,36 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, {useState} from 'react';
+import { NavigationContainer } from '@react-navigation/native';
 import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
+import {createStackNavigator} from "@react-navigation/stack";
+import SignInScreen from "./src/components/screens/sign-in-page";
+import SignUpScreen from "./src/components/screens/sign-up-page";
 
 const client = new ApolloClient({
   uri: 'some-address'
-})
+});
+
+const Stack = createStackNavigator();
 
 export default function App() {
+
+  const [ userToken, setUserToken ] = useState<string | null>(null)
+
   return (
     <ApolloProvider client={client}>
-      <View style={styles.container}>
-        <Text>Open up App.tsx to start working on your app!</Text>
-      </View>🚀
+      <NavigationContainer>
+        <Stack.Navigator>
+          {
+            userToken == null ? (
+              <React.Fragment>
+                <Stack.Screen name="Sign In" component={SignInScreen}/>
+                <Stack.Screen name="Sign Up" component={SignUpScreen}/>
+              </React.Fragment>
+            ) : null
+          }
+        </Stack.Navigator>
+      </NavigationContainer>
     </ApolloProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
