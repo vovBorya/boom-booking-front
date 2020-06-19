@@ -1,6 +1,8 @@
 import {styles} from "./sign-in-screen-styles";
 import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
 import React from "react";
+// @ts-ignore
+import translate from '../../../utils/i18n.js'
 
 type SignInScreenViewProps = {
   setLogin: (newString: string) => void
@@ -21,6 +23,8 @@ const SignInScreenView: React.FC<SignInScreenViewProps> = ({
                                                          signIn,
                                                          signUp,
                                                        }) => {
+
+
   return(
     <View style={styles.container}>
       <Image
@@ -30,17 +34,19 @@ const SignInScreenView: React.FC<SignInScreenViewProps> = ({
       />
       <View>
         <View style={styles.labelAndInput}>
-          <Text>логин</Text>
+          <Text>{ translate('common.login') }</Text>
           <TextInput
             style={styles.input}
+            // @ts-ignore
             textAlign="center"
             onChangeText={setLogin}
           />
         </View>
         <View style={styles.labelAndInput}>
-          <Text>пароль</Text>
+          <Text>{translate('common.password')}</Text>
           <TextInput
             style={styles.input}
+            // @ts-ignore
             textAlign="center"
             onChangeText={setPassword}
             secureTextEntry={true}
@@ -52,7 +58,7 @@ const SignInScreenView: React.FC<SignInScreenViewProps> = ({
             activeOpacity={activityOpacity}
             onPress={signIn}
           >
-            <Text style={styles.enterLabel}>Войти</Text>
+            <Text style={styles.enterLabel}>{translate('actions.signIn')}</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.icons}>
@@ -65,7 +71,7 @@ const SignInScreenView: React.FC<SignInScreenViewProps> = ({
         </View>
       </View>
       <TouchableOpacity activeOpacity={activityOpacity} onPress={signUp}>
-        <Text style={styles.signUp}>регистрация</Text>
+        <Text style={styles.signUp}>{translate('actions.signUp')}</Text>
       </TouchableOpacity>
     </View>
   )

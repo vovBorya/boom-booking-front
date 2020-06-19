@@ -1,4 +1,4 @@
-type SignInType = {
+interface ISignedAcc {
   token: string,
   account: {
     id: number,
@@ -7,8 +7,9 @@ type SignInType = {
   }
 }
 
-const signIn = (login: string, password: string): SignInType => {
+const signIn = (login: string, password: string): ISignedAcc => {
 
+  console.log(`sign in in service. login: ${login}\n password ${password}`)
 
   return {
     token: 'token',
@@ -20,4 +21,7 @@ const signIn = (login: string, password: string): SignInType => {
   }
 }
 
-export default signIn;
+export {
+  signIn,
+  ISignedAcc
+};
