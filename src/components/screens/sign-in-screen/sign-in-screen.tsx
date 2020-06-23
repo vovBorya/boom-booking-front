@@ -15,7 +15,7 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, signIn }) => {
   const ACTIVITY_OPACITY: number = 0.7;
 
   const onSignUpClick = (): void => {
-    navigation.navigate('Sign Up')
+    navigation.navigate('signUp')
   }
 
   const onFBClick = (): void => {
@@ -40,6 +40,7 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, signIn }) => {
 }
 
 const mapStateToProps = ({}) => ({})
+
 const mapDispatchToProps = (dispatch: any) => ({
   signIn: (login: string, password: string) => {
     dispatch(actions.signIn({login, password}))

@@ -4,11 +4,12 @@ import ApolloClient from 'apollo-boost';
 import { ApolloProvider } from '@apollo/react-hooks';
 import {createStackNavigator} from "@react-navigation/stack";
 import SignInScreen from "./src/components/screens/sign-in-screen";
-import SignUpScreen from "./src/components/screens/sign-up-screen";
+import SignUpScreen from "./src/components/screens/sign-up-screen/sign-up-screen";
 import { Provider } from 'react-redux'
 import store from "./src/store";
 // @ts-ignore
 import translate from './src/utils/i18n.js'
+import ClientSignUpScreen from "./src/components/screens/sign-up-screen/client-sign-up-screen";
 
 const client = new ApolloClient({
   uri: 'some-address'
@@ -25,22 +26,21 @@ export default function App() {
       <ApolloProvider client={client}>
         <NavigationContainer>
           <Stack.Navigator>
-            {
-              userToken == null ? (
-                <React.Fragment>
-                  <Stack.Screen
-                    name="Sign In"
-                    component={SignInScreen}
-                    options={{ title: translate('common.signInTitle') }}
-                  />
-                  <Stack.Screen
-                    name="Sign Up"
-                    component={SignUpScreen}
-                    options={{ title: translate('common.signUpTitle') }}
-                  />
-                </React.Fragment>
-              ) : null
-            }
+            <Stack.Screen
+              name="signIn"
+              component={SignInScreen}
+              options={{ title: translate('common.signInTitle') }}
+            />
+            <Stack.Screen
+              name="signUp"
+              component={SignUpScreen}
+              options={{ title: translate('common.signUpTitle') }}
+            />
+            <Stack.Screen
+              name="clientSignUp"
+              component={ClientSignUpScreen}
+              options={{ title: "регистрация как пользователь" }}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </ApolloProvider>

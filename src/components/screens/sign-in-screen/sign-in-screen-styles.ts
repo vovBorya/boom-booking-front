@@ -13,18 +13,6 @@ export const styles = StyleSheet.create({
     width: 350,
     height: 150
   },
-  input: {
-    width: 300,
-    height: 50,
-    borderRadius: 30,
-    borderWidth: 1.5,
-    borderColor: '#e18c44',
-    marginTop: 7
-  },
-  labelAndInput: {
-    alignItems: "center",
-    margin: 7
-  },
   button: {
     margin: 15,
     alignItems: "center",
@@ -41,7 +29,8 @@ export const styles = StyleSheet.create({
   },
   enterLabelView: {
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: 5
   },
   icons: {
     flexDirection: "row",

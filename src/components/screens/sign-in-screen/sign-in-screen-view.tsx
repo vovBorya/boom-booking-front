@@ -1,8 +1,9 @@
 import {styles} from "./sign-in-screen-styles";
-import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {Image, Text, TouchableOpacity, View} from "react-native";
 import React from "react";
 // @ts-ignore
 import translate from '../../../utils/i18n.js'
+import TextInputWithLabel from "../../small-components/text-input-with-label";
 
 type SignInScreenViewProps = {
   setLogin: (newString: string) => void
@@ -24,7 +25,6 @@ const SignInScreenView: React.FC<SignInScreenViewProps> = ({
                                                          signUp,
                                                        }) => {
 
-
   return(
     <View style={styles.container}>
       <Image
@@ -33,25 +33,16 @@ const SignInScreenView: React.FC<SignInScreenViewProps> = ({
         fadeDuration={500}
       />
       <View>
-        <View style={styles.labelAndInput}>
-          <Text>{ translate('common.login') }</Text>
-          <TextInput
-            style={styles.input}
-            // @ts-ignore
-            textAlign="center"
-            onChangeText={setLogin}
-          />
-        </View>
-        <View style={styles.labelAndInput}>
-          <Text>{translate('common.password')}</Text>
-          <TextInput
-            style={styles.input}
-            // @ts-ignore
-            textAlign="center"
-            onChangeText={setPassword}
-            secureTextEntry={true}
-          />
-        </View>
+        <TextInputWithLabel
+          label={translate('common.login')}
+          setText={setLogin}
+          hideText={false}
+        />
+        <TextInputWithLabel
+          label={translate('common.password')}
+          setText={setPassword}
+          hideText={true}
+        />
         <View style={styles.enterLabelView}>
           <TouchableOpacity
             style={styles.button}
