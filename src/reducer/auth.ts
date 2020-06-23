@@ -1,11 +1,12 @@
-import {signIn, ISignedAcc, signUp} from "../services";
-import {IGlobalState, initialState} from "./global-state";
+import {signIn, signUp} from "../services";
+import {IGlobalState} from "../store";
 
-const auth = (state: IGlobalState = initialState, action: any): object => {
+const auth = (state: IGlobalState, action: any): object => {
 
   switch (action.type) {
     case 'SIGN_IN':
       const { login, password } = action.payload
+      console.log(`state: ${state.language}`)
       return {
         ...state,
         ...signIn(login, password)

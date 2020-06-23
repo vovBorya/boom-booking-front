@@ -10,6 +10,7 @@ import store from "./src/store";
 // @ts-ignore
 import translate from './src/utils/i18n.js'
 import ClientSignUpScreen from "./src/components/screens/sign-up-screen/client-sign-up-screen";
+import AdminSignUpScreen from "./src/components/screens/sign-up-screen/admin-sign-up-screen";
 
 const client = new ApolloClient({
   uri: 'some-address'
@@ -40,6 +41,11 @@ export default function App() {
               name="clientSignUp"
               component={ClientSignUpScreen}
               options={{ title: "регистрация как пользователь" }}
+            />
+            <Stack.Screen
+              name="adminSignUp"
+              component={AdminSignUpScreen}
+              options={{ title: "регистрация как admin" }}
             />
           </Stack.Navigator>
         </NavigationContainer>

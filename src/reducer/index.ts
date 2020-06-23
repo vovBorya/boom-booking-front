@@ -1,6 +1,7 @@
 import auth from "../reducer/auth";
+import {IGlobalState} from "../store";
 
-const reducer = (state: object, action: object) => ({
+const reducer = (state: IGlobalState, action: object) => ({
   auth: auth(state, action)
 })
 

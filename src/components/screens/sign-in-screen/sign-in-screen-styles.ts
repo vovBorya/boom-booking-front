@@ -4,8 +4,8 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
+    alignItems: 'stretch',
+    justifyContent: 'flex-start'
   },
   logo: {
     marginTop: 60,
@@ -32,6 +32,10 @@ export const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 5
   },
+  viewContainer: {
+    justifyContent: "center",
+    alignItems: "center",
+  },
   icons: {
     flexDirection: "row",
     alignItems: "center",
@@ -43,6 +47,7 @@ export const styles = StyleSheet.create({
     width: 50
   },
   signUp: {
-    marginTop: 15
+    marginTop: 15,
+    marginBottom: 30
   }
 })
