@@ -7,12 +7,6 @@ export const styles = StyleSheet.create({
     alignItems: 'stretch',
     justifyContent: 'flex-start'
   },
-  logo: {
-    marginTop: 60,
-    marginBottom: 30,
-    width: 350,
-    height: 150
-  },
   button: {
     margin: 15,
     alignItems: "center",

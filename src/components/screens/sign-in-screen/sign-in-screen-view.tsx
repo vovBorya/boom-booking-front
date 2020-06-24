@@ -4,6 +4,7 @@ import React from "react";
 // @ts-ignore
 import translate from '../../../utils/i18n.js'
 import TextInputWithLabel from "../../small-components/text-input-with-label";
+import {BigLogo} from "../../small-components/big-logo/big-logo";
 
 type SignInScreenViewProps = {
   setLogin: (newString: string) => void
@@ -29,13 +30,9 @@ const SignInScreenView: React.FC<SignInScreenViewProps> = ({
     <View style={styles.container}>
       <ScrollView>
         <View style={styles.viewContainer}>
-          <Image
-            style={styles.logo}
-            source={require('../../../resources/img/logo.png')}
-            fadeDuration={500}
-          />
+          <BigLogo />
           <TextInputWithLabel
-            label={translate('common.login')}
+            label={translate('common.email')}
             setText={setLogin}
             hideText={false}
           />

@@ -23,8 +23,8 @@ export default function App() {
   const [ userToken, setUserToken ] = useState<string | null>(null)
 
   return (
-    <Provider store={store}>
-      <ApolloProvider client={client}>
+    <ApolloProvider client={client}>
+      <Provider store={store}>
         <NavigationContainer>
           <Stack.Navigator>
             <Stack.Screen
@@ -49,8 +49,8 @@ export default function App() {
             />
           </Stack.Navigator>
         </NavigationContainer>
-      </ApolloProvider>
-    </Provider>
+      </Provider>
+    </ApolloProvider>
   );
 };
 

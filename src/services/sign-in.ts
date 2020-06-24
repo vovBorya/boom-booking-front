@@ -7,9 +7,11 @@ interface ISignedAcc {
   }
 }
 
-const signIn = (login: string, password: string): ISignedAcc => {
+const signIn = (email: string, password: string): ISignedAcc => {
 
-  console.log(`sign in in service. login: ${login}\n password ${password}`)
+  console.log(`sign in in service. login: ${email}\n password ${password}`)
+
+  //какой-то запрос бла бла бла
 
   return {
     token: 'token',
