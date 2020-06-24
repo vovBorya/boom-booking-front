@@ -1,17 +1,14 @@
 import React, { useState } from 'react';
 import SignInScreenView from "./sign-in-screen-view";
 import { connect } from "react-redux";
-import * as actions from '../../../actions/auth'
-import {useQuery} from "@apollo/react-hooks";
-import {SIGN_IN} from "../../../constants/queries/sign-in";
-import SpinnerScreen from "../spinner-screen";
+import {AccountType, saveAccount} from '../../../actions';
 
 type SignInScreenProps = {
 
 }
 
 // @ts-ignore
-const SignInScreen: React.FC<SignInScreenProps> = ({ navigation }) => {
+const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) => {
 
   const [ email, setEmail ] = useState<string>('');
   const [ password, setPassword ] = useState<string>('');
@@ -19,12 +16,6 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation }) => {
   const ACTIVITY_OPACITY: number = 0.7;
 
   const onSignInClick = (email: string, password: string): void => {
-    const { loading, error, data } = useQuery(SIGN_IN, {
-      variables: { email, password }
-    })
-
-    if (!loading )
-
     console.log('sign in')
   }
 
@@ -51,15 +42,12 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation }) => {
       googleSignIn={onGoogleClick}
     />
   )
-}
-
-const mapStateToProps = ({}) => ({})
+};
 
 const mapDispatchToProps = (dispatch: any) => ({
+  saveAccount: (account: AccountType) => {
+    dispatch(saveAccount(account))
+  }
+});
 
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(SignInScreen)
-
-/*
-export default SignInScreen*/
+export default connect(null, mapDispatchToProps)(SignInScreen);
