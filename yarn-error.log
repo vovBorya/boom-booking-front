@@ -1265,7 +1265,7 @@ Lockfile:
       nanoid "^3.1.5"
       query-string "^6.12.1"
       react-is "^16.13.0"
-      use-subscription "^1.4.0"
+      use-description "^1.4.0"
   
   "@react-navigation/native@^5.5.1":
     version "5.5.1"
@@ -6123,9 +6123,9 @@ Lockfile:
       querystringify "^2.1.1"
       requires-port "^1.0.0"
   
-  use-subscription@^1.4.0:
+  use-description@^1.4.0:
     version "1.4.1"
-    resolved "https://registry.yarnpkg.com/use-subscription/-/use-subscription-1.4.1.tgz#edcbcc220f1adb2dd4fa0b2f61b6cc308e620069"
+    resolved "https://registry.yarnpkg.com/use-description/-/use-description-1.4.1.tgz#edcbcc220f1adb2dd4fa0b2f61b6cc308e620069"
     integrity sha512-7+IIwDG/4JICrWHL/Q/ZPK5yozEnvRm6vHImu0LKwQlmWGKeiF7mbAenLlK/cTNXrTtXHU/SFASQHzB6+oSJMQ==
     dependencies:
       object-assign "^4.1.1"

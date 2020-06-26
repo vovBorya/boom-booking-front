@@ -4,26 +4,8 @@ export const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-  },
-  logo: {
-    marginTop: 60,
-    marginBottom: 30,
-    width: 350,
-    height: 150
-  },
-  input: {
-    width: 300,
-    height: 50,
-    borderRadius: 30,
-    borderWidth: 1.5,
-    borderColor: '#e18c44',
-    marginTop: 7
-  },
-  labelAndInput: {
-    alignItems: "center",
-    margin: 7
+    alignItems: 'stretch',
+    justifyContent: 'flex-start'
   },
   button: {
     margin: 15,
@@ -41,7 +23,12 @@ export const styles = StyleSheet.create({
   },
   enterLabelView: {
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    marginTop: 5
+  },
+  viewContainer: {
+    justifyContent: "center",
+    alignItems: "center",
   },
   icons: {
     flexDirection: "row",
@@ -54,6 +41,7 @@ export const styles = StyleSheet.create({
     width: 50
   },
   signUp: {
-    marginTop: 15
+    marginTop: 15,
+    marginBottom: 30
   }
 })

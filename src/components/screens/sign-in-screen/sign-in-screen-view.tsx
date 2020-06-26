@@ -1,12 +1,19 @@
 import {styles} from "./sign-in-screen-styles";
-import {Image, Text, TextInput, TouchableOpacity, View} from "react-native";
+import {Image, ScrollView, Text, TouchableOpacity, View} from "react-native";
 import React from "react";
 // @ts-ignore
 import translate from '../../../utils/i18n.js'
+import TextInputWithLabel from "../../small-components/text-input-with-label";
+import {BigLogo} from "../../small-components/big-logo/big-logo";
+import {InputState} from "../../../utils/enums/enums";
+import {useLazyQuery} from "@apollo/react-hooks";
+import {SIGN_IN} from "../../../constants/queries/sign-in";
 
 type SignInScreenViewProps = {
-  setLogin: (newString: string) => void
-  setPassword: (newString: string) => void
+  onChangeEmail: (newString: string) => void
+  onChangePassword: (newString: string) => void
+  emailState: InputState
+  passwordState: InputState
   activityOpacity: number
   signIn: () => void
   signUp: () => void
@@ -14,65 +21,68 @@ type SignInScreenViewProps = {
   googleSignIn: () => void
 }
 
-const SignInScreenView: React.FC<SignInScreenViewProps> = ({
-                                                         setLogin,
-                                                         setPassword,
-                                                         activityOpacity,
-                                                         facebookSingIn,
-                                                         googleSignIn,
-                                                         signIn,
-                                                         signUp,
-                                                       }) => {
+const SignInScreenView: React.FC<SignInScreenViewProps> =
+  ({
+     onChangeEmail,
+     onChangePassword,
+     emailState,
+     passwordState,
+     activityOpacity,
+     facebookSingIn,
+     googleSignIn,
+     signIn,
+     signUp,
+  }) => {
+
+  const emailDescription: string = 'Неверный формат почты';
+  const passwordDescription: string = 'Неверный формат пароля. \n' +
+    'Пароль должен содержать буквы латинского алфавита разных регистров\n,' +
+    'цифры, и спецсимволы !@#$%^&*';
 
 
   return(
     <View style={styles.container}>
-      <Image
-        style={styles.logo}
-        source={require('../../../resources/img/logo.png')}
-        fadeDuration={500}
-      />
-      <View>
-        <View style={styles.labelAndInput}>
-          <Text>{ translate('common.login') }</Text>
-          <TextInput
-            style={styles.input}
-            // @ts-ignore
-            textAlign="center"
-            onChangeText={setLogin}
+      <ScrollView>
+        <View style={styles.viewContainer}>
+          <BigLogo />
+          <TextInputWithLabel
+            label={translate('common.email')}
+            setText={onChangeEmail}
+            hideText={false}
+            inputState={emailState}
+            description={emailDescription}
           />
-        </View>
-        <View style={styles.labelAndInput}>
-          <Text>{translate('common.password')}</Text>
-          <TextInput
-            style={styles.input}
-            // @ts-ignore
-            textAlign="center"
-            onChangeText={setPassword}
-            secureTextEntry={true}
+          <TextInputWithLabel
+            label={translate('common.password')}
+            setText={onChangePassword}
+            hideText={true}
+            inputState={passwordState}
+            description={passwordDescription}
           />
+          <View style={styles.enterLabelView}>
+            <TouchableOpacity
+              style={styles.button}
+              activeOpacity={activityOpacity}
+              onPress={signIn}
+            >
+              <Text style={styles.enterLabel}>{translate('actions.signIn')}</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.icons}>
+            <TouchableOpacity activeOpacity={activityOpacity} onPress={facebookSingIn}>
+              <Image style={styles.image} source={require(`../../../resources/img/FB.png`)} />
+            </TouchableOpacity>
+            <TouchableOpacity activeOpacity={activityOpacity} onPress={googleSignIn} >
+              <Image style={styles.image} source={require('../../../resources/img/google.png')} />
+            </TouchableOpacity>
+          </View>
         </View>
-        <View style={styles.enterLabelView}>
-          <TouchableOpacity
-            style={styles.button}
-            activeOpacity={activityOpacity}
-            onPress={signIn}
-          >
-            <Text style={styles.enterLabel}>{translate('actions.signIn')}</Text>
+        <View style={styles.viewContainer}>
+          <TouchableOpacity activeOpacity={activityOpacity} onPress={signUp}>
+            <Text style={styles.signUp}>{translate('actions.signUp')}</Text>
           </TouchableOpacity>
         </View>
-        <View style={styles.icons}>
-          <TouchableOpacity activeOpacity={activityOpacity} onPress={facebookSingIn}>
-            <Image style={styles.image} source={require(`../../../resources/img/FB.png`)} />
-          </TouchableOpacity>
-          <TouchableOpacity activeOpacity={activityOpacity} onPress={googleSignIn} >
-            <Image style={styles.image} source={require('../../../resources/img/google.png')} />
-          </TouchableOpacity>
-        </View>
-      </View>
-      <TouchableOpacity activeOpacity={activityOpacity} onPress={signUp}>
-        <Text style={styles.signUp}>{translate('actions.signUp')}</Text>
-      </TouchableOpacity>
+      </ScrollView>
     </View>
   )
 }
