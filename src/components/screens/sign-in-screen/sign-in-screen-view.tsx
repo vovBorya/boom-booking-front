@@ -5,10 +5,13 @@ import React from "react";
 import translate from '../../../utils/i18n.js'
 import TextInputWithLabel from "../../small-components/text-input-with-label";
 import {BigLogo} from "../../small-components/big-logo/big-logo";
+import {InputState} from "../../../utils/enums/enums";
 
 type SignInScreenViewProps = {
-  setLogin: (newString: string) => void
-  setPassword: (newString: string) => void
+  onChangeEmail: (newString: string) => void
+  onChangePassword: (newString: string) => void
+  emailState: InputState
+  passwordState: InputState
   activityOpacity: number
   signIn: () => void
   signUp: () => void
@@ -16,15 +19,23 @@ type SignInScreenViewProps = {
   googleSignIn: () => void
 }
 
-const SignInScreenView: React.FC<SignInScreenViewProps> = ({
-                                                         setLogin,
-                                                         setPassword,
-                                                         activityOpacity,
-                                                         facebookSingIn,
-                                                         googleSignIn,
-                                                         signIn,
-                                                         signUp,
-                                                       }) => {
+const SignInScreenView: React.FC<SignInScreenViewProps> =
+  ({
+     onChangeEmail,
+     onChangePassword,
+     emailState,
+     passwordState,
+     activityOpacity,
+     facebookSingIn,
+     googleSignIn,
+     signIn,
+     signUp,
+  }) => {
+
+  const emailDescription: string = 'Неверный формат почты';
+  const passwordDescription: string = 'Неверный формат пароля. \n' +
+    'Пароль должен содержать буквы латинского алфавита разных регистров\n,' +
+    'цифры, и спецсимволы !@#$%^&*';
 
   return(
     <View style={styles.container}>
@@ -33,13 +44,17 @@ const SignInScreenView: React.FC<SignInScreenViewProps> = ({
           <BigLogo />
           <TextInputWithLabel
             label={translate('common.email')}
-            setText={setLogin}
+            setText={onChangeEmail}
             hideText={false}
+            inputState={emailState}
+            description={emailDescription}
           />
           <TextInputWithLabel
             label={translate('common.password')}
-            setText={setPassword}
+            setText={onChangePassword}
             hideText={true}
+            inputState={passwordState}
+            description={passwordDescription}
           />
           <View style={styles.enterLabelView}>
             <TouchableOpacity

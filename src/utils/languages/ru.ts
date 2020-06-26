@@ -1,6 +1,6 @@
 export default {
   common: {
-    login: "Логин",
+    email: "Почта",
     password: "Пароль",
     signInTitle: "Вход",
     signUpTitle: "Регистрация"

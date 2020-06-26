@@ -13,7 +13,7 @@ import ClientSignUpScreen from "./src/components/screens/sign-up-screen/client-s
 import AdminSignUpScreen from "./src/components/screens/sign-up-screen/admin-sign-up-screen";
 
 const client = new ApolloClient({
-  uri: 'some-address'
+  uri: 'http://ec2-44-231-236-214.us-west-2.compute.amazonaws.com/v1'
 });
 
 const Stack = createStackNavigator();

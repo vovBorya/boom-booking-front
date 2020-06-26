@@ -1,6 +1,6 @@
 export default {
   common: {
-    login: "Login",
+    email: "Email",
     password: "Password",
     signInTitle: "Sign in",
     signUpTitle: "Sign up"
