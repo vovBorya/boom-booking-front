@@ -3,6 +3,9 @@ import SignInScreenView from "./sign-in-screen-view";
 import {connect} from "react-redux";
 import {AccountType, saveAccount} from '../../../actions';
 import {InputState} from "../../../utils/enums/enums";
+import {SIGN_IN} from "../../../constants/queries/sign-in";
+import {useLazyQuery} from "@apollo/react-hooks";
+import {err} from "react-native-svg/lib/typescript/xml";
 
 type SignInScreenProps = {
 
@@ -18,12 +21,18 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) 
 
   const isEmailValid = (email: string) => /^[.\-_A-Za-z0-9]+?@[.\-A-Za-z0-9]+?\.[A-Za-z0-9]{2,6}$/.test(email);
 
-  const isPasswordValid = (password: string) => /(?=.*[0-9])(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g.test(password)
+  const isPasswordValid = (password: string) => /(?=.*[0-9])(?=.*[!@#$%^&*_])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g.test(password)
 
   const ACTIVITY_OPACITY: number = 0.7;
 
-  const onSignInClick = (email: string, password: string): void => {
-    console.log('sign in')
+  const [onSignInClick, { called, loading, data, error }] = useLazyQuery(
+    SIGN_IN,
+    { variables: { email: email, password: password } }
+  )
+
+  if(called) {
+    console.log(data.signIn);
+    saveAccount(data)
   }
 
   const onChangeEmail = (newEmail: string) => {
@@ -31,7 +40,6 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) 
       setEmailState(InputState.valid)
     } else setEmailState(InputState.invalid)
     setEmail(newEmail)
-    console.log('change email')
   }
 
   const onChangePassword = (newPassword: string) => {
@@ -39,7 +47,6 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) 
       setPasswordState(InputState.valid)
     } else setPasswordState(InputState.invalid)
     setPassword(newPassword)
-    console.log('change password')
   }
 
   const onSignUpClick = (): void => {
@@ -61,7 +68,7 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) 
       emailState={emailState}
       passwordState={passwordState}
       activityOpacity={ACTIVITY_OPACITY}
-      signIn={() => onSignInClick(email, password)}
+      signIn={() => onSignInClick()}
       signUp={onSignUpClick}
       facebookSingIn={onFBClick}
       googleSignIn={onGoogleClick}

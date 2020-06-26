@@ -6,6 +6,8 @@ import translate from '../../../utils/i18n.js'
 import TextInputWithLabel from "../../small-components/text-input-with-label";
 import {BigLogo} from "../../small-components/big-logo/big-logo";
 import {InputState} from "../../../utils/enums/enums";
+import {useLazyQuery} from "@apollo/react-hooks";
+import {SIGN_IN} from "../../../constants/queries/sign-in";
 
 type SignInScreenViewProps = {
   onChangeEmail: (newString: string) => void
@@ -36,6 +38,7 @@ const SignInScreenView: React.FC<SignInScreenViewProps> =
   const passwordDescription: string = 'Неверный формат пароля. \n' +
     'Пароль должен содержать буквы латинского алфавита разных регистров\n,' +
     'цифры, и спецсимволы !@#$%^&*';
+
 
   return(
     <View style={styles.container}>
