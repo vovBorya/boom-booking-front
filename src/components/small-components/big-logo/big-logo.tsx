@@ -13,7 +13,7 @@ export const BigLogo = () => {
 
 const styles = StyleSheet.create({
   logo: {
-    marginTop: 60,
+    marginTop: 80,
     marginBottom: 30,
     width: 350,
     height: 150

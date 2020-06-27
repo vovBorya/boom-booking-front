@@ -5,7 +5,6 @@ import {AccountType, saveAccount} from '../../../actions';
 import {InputState} from "../../../utils/enums/enums";
 import {SIGN_IN} from "../../../constants/queries/sign-in";
 import {useLazyQuery} from "@apollo/react-hooks";
-import {err} from "react-native-svg/lib/typescript/xml";
 
 type SignInScreenProps = {
 
@@ -16,12 +15,12 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) 
 
   const [ email, setEmail ] = useState<string>('');
   const [ password, setPassword ] = useState<string>('');
-  const [ emailState, setEmailState ] = useState<InputState>(InputState.unused);
-  const [ passwordState, setPasswordState ] = useState<InputState>(InputState.unused);
+  const [ emailInputState, setEmailInputState ] = useState<InputState>(InputState.unused);
+  const [ passwordInputState, setPasswordInputState ] = useState<InputState>(InputState.unused);
 
   const isEmailValid = (email: string) => /^[.\-_A-Za-z0-9]+?@[.\-A-Za-z0-9]+?\.[A-Za-z0-9]{2,6}$/.test(email);
 
-  const isPasswordValid = (password: string) => /(?=.*[0-9])(?=.*[!@#$%^&*_])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z!@#$%^&*]{6,}/g.test(password)
+  const isPasswordValid = (password: string) => /^(?=.*\d)(?=.*[!@#$%^&*_])(?=.*[a-z])(?=.*[A-Z])[\da-zA-Z!@#$%^&*_]{8,}$/g.test(password)
 
   const ACTIVITY_OPACITY: number = 0.7;
 
@@ -37,15 +36,15 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) 
 
   const onChangeEmail = (newEmail: string) => {
     if (isEmailValid(newEmail)) {
-      setEmailState(InputState.valid)
-    } else setEmailState(InputState.invalid)
+      setEmailInputState(InputState.valid)
+    } else setEmailInputState(InputState.invalid)
     setEmail(newEmail)
   }
 
   const onChangePassword = (newPassword: string) => {
     if(isPasswordValid(newPassword)) {
-      setPasswordState(InputState.valid)
-    } else setPasswordState(InputState.invalid)
+      setPasswordInputState(InputState.valid)
+    } else setPasswordInputState(InputState.invalid)
     setPassword(newPassword)
   }
 
@@ -63,15 +62,15 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) 
 
   return (
     <SignInScreenView
-      onChangeEmail={onChangeEmail}
-      onChangePassword={onChangePassword}
-      emailState={emailState}
-      passwordState={passwordState}
-      activityOpacity={ACTIVITY_OPACITY}
-      signIn={() => onSignInClick()}
-      signUp={onSignUpClick}
-      facebookSingIn={onFBClick}
-      googleSignIn={onGoogleClick}
+    onChangeEmail={onChangeEmail}
+    onChangePassword={onChangePassword}
+    emailState={emailInputState}
+    passwordState={passwordInputState}
+    activityOpacity={ACTIVITY_OPACITY}
+    signIn={() => onSignInClick()}
+    signUp={onSignUpClick}
+    facebookSingIn={onFBClick}
+    googleSignIn={onGoogleClick}
     />
   )
 };

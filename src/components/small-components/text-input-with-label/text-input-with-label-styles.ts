@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { colors } from '../../../resources/colors'
 
 const styles = StyleSheet.create({
   input: {
@@ -13,17 +14,14 @@ const styles = StyleSheet.create({
     margin: 7
   },
   validInput: {
-    borderColor: '#07ff00',
-    shadowColor: '#07ff00',
+    borderColor: colors.validBorder
   },
   invalidInput: {
-    borderColor: '#ff0000',
-    shadowColor: '#ff0000'
+    borderColor: colors.invalidBorder,
 
   },
   unusedInput: {
     borderColor: '#e18c44',
-    shadowColor: '#e18c44'
   },
   description: {
     marginTop: 10,
