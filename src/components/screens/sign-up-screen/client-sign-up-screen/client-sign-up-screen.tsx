@@ -15,63 +15,19 @@ const ClientSignUpScreen = () => {
   const [ lastName, setLastName ] = useState<string>('');
   const [ firstName, setFirstName ] = useState<string>('');
 
-  const emailAndPasswordView = (
-    <View>
-      <TextInputWithLabel
-        label="email"
-        setText={setEmail}
-        hideText={false}
-      />
-      <TextInputWithLabel
-        label="password"
-        setText={setPassword}
-        hideText={true}
-      />
-      <TextInputWithLabel
-        label="confirmed password"
-        setText={setConfirmedPassword}
-        hideText={true}
-      />
-      <OrangeButton label="Next" onClick={() => onNextClick()} />
-    </View>
-  )
-
-  const phoneAndNamesView = (
-    <View>
-      <TextInputWithLabel
-        label="phone number"
-        setText={setPhoneNumber}
-        hideText={false}
-      />
-      <TextInputWithLabel
-        label="last name"
-        setText={setLastName}
-        hideText={false}
-      />
-      <TextInputWithLabel
-        label="first name"
-        setText={setFirstName}
-        hideText={false}
-      />
-    </View>
-  )
-
-  const content = emailAndPasswordView;
-
   const onNextClick = () => {
     console.log('onNextClick');
-
   }
 
   return (
-    <View style={styles.container}>
-      <ScrollView>
-        <View style={styles.viewContainer}>
-          <BigLogo />
-          {emailPasswordView}
-        </View>
-      </ScrollView>
-    </View>
+    <ClientSignUpScreenView
+      setEmail={setEmail}
+      setPassword={setPassword}
+      setConfirmedPassword={setConfirmedPassword}
+      setPhoneNumber={setPhoneNumber}
+      setLastName={setLastName}
+      setFirstName={setFirstName}
+    />
   )
 }
 
