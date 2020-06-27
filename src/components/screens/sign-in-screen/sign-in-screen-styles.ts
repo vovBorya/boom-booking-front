@@ -1,30 +1,12 @@
 import { StyleSheet } from 'react-native'
+import { colors } from "../../../resources/colors";
 
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: colors.mainBackground,
     alignItems: 'stretch',
     justifyContent: 'flex-start'
-  },
-  button: {
-    margin: 15,
-    alignItems: "center",
-    justifyContent: "center",
-    backgroundColor: "#e18c44",
-    borderRadius: 25,
-    height: 45,
-    width: 250
-  },
-  enterLabel: {
-    color: "#fff",
-    fontWeight: "bold",
-    fontSize: 20
-  },
-  enterLabelView: {
-    justifyContent: "center",
-    alignItems: "center",
-    marginTop: 5
   },
   viewContainer: {
     justifyContent: "center",

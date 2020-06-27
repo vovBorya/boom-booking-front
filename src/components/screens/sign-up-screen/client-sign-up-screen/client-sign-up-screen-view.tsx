@@ -5,6 +5,7 @@ import TextInputWithLabel from "../../../small-components/text-input-with-label"
 // @ts-ignore
 import translate from '../../../../utils/i18n'
 import {BigLogo} from "../../../small-components/big-logo/big-logo";
+import OrangeButton from "../../../small-components/orange-button";
 
 type ClientSignUpScreenViewProps = {
   setEmail: (newString: string) => void
@@ -45,7 +46,8 @@ const ClientSignUpScreenView: React.FC<ClientSignUpScreenViewProps> =
             setText={setConfirmedPassword}
             hideText={true}
           />
-          <TextInputWithLabel
+          <OrangeButton label="Next" onClick={() => console.log('next')} />
+          {/*<TextInputWithLabel
             label="phone number"
             setText={setPhoneNumber}
             hideText={false}
@@ -59,7 +61,7 @@ const ClientSignUpScreenView: React.FC<ClientSignUpScreenViewProps> =
             label="first name"
             setText={setFirstName}
             hideText={false}
-          />
+          />*/}
         </View>
       </ScrollView>
     </View>

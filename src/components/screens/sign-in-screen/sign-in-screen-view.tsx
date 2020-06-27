@@ -8,6 +8,7 @@ import {BigLogo} from "../../small-components/big-logo/big-logo";
 import {InputState} from "../../../utils/enums/enums";
 import {useLazyQuery} from "@apollo/react-hooks";
 import {SIGN_IN} from "../../../constants/queries/sign-in";
+import OrangeButton from "../../small-components/orange-button";
 
 type SignInScreenViewProps = {
   onChangeEmail: (newString: string) => void
@@ -59,21 +60,13 @@ const SignInScreenView: React.FC<SignInScreenViewProps> =
             inputState={passwordState}
             description={passwordDescription}
           />
-          <View style={styles.enterLabelView}>
-            <TouchableOpacity
-              style={styles.button}
-              activeOpacity={activityOpacity}
-              onPress={signIn}
-            >
-              <Text style={styles.enterLabel}>{translate('actions.signIn')}</Text>
-            </TouchableOpacity>
-          </View>
+          <OrangeButton label={translate('actions.signIn')} onClick={signIn} />
           <View style={styles.icons}>
             <TouchableOpacity activeOpacity={activityOpacity} onPress={facebookSingIn}>
-              <Image style={styles.image} source={require(`../../../resources/img/FB.png`)} />
+              <Image style={styles.image} source={require(`../../../resources/img/icons/FB.png`)} />
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={activityOpacity} onPress={googleSignIn} >
-              <Image style={styles.image} source={require('../../../resources/img/google.png')} />
+              <Image style={styles.image} source={require('../../../resources/img/icons/google.png')} />
             </TouchableOpacity>
           </View>
         </View>

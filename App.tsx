@@ -26,7 +26,11 @@ export default function App() {
     <ApolloProvider client={client}>
       <Provider store={store}>
         <NavigationContainer>
-          <Stack.Navigator>
+          <Stack.Navigator
+            screenOptions={{
+              headerShown: false
+            }}
+          >
             <Stack.Screen
               name="signIn"
               component={SignInScreen}
