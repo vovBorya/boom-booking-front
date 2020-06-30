@@ -27,7 +27,7 @@ const ClientSignUpScreenView: React.FC<ClientSignUpScreenViewProps> =
   }) => {
 
   return (
-    <View style={styles.container}>
+    <View style={styles.scrollContainer}>
       <ScrollView>
         <View style={styles.viewContainer}>
           <BigLogo />

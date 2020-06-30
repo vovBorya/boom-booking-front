@@ -7,37 +7,37 @@ import AdminSignUpScreen from "./sign-up-screen/admin-sign-up-screen";
 import React from "react";
 import {createStackNavigator} from "@react-navigation/stack";
 
-const Stack = createStackNavigator();
+const AuthStack = createStackNavigator();
 
 const Screens = () => {
 
   return(
-    <Stack.Navigator
+    <AuthStack.Navigator
       screenOptions={{
         headerShown: false
       }}
     >
-      <Stack.Screen
+      <AuthStack.Screen
         name="signIn"
       component={SignInScreen}
       options={{ title: translate('common.signInTitle') }}
       />
-      <Stack.Screen
+      <AuthStack.Screen
       name="signUp"
       component={SignUpScreen}
       options={{ title: translate('common.signUpTitle') }}
       />
-      <Stack.Screen
+      <AuthStack.Screen
       name="clientSignUp"
       component={ClientSignUpScreen}
       options={{ title: "регистрация как пользователь" }}
       />
-      <Stack.Screen
+      <AuthStack.Screen
       name="adminSignUp"
       component={AdminSignUpScreen}
       options={{ title: "регистрация как admin" }}
       />
-    </Stack.Navigator>
+    </AuthStack.Navigator>
   )
 }
 

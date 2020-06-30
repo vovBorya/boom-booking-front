@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native'
 import { colors } from "../../../resources/colors";
 
 export const styles = StyleSheet.create({
-  container: {
+  scrollContainer: {
     flex: 1,
     backgroundColor: colors.mainBackground,
     alignItems: 'stretch',
@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     justifyContent: "center",
     margin: 7
   },
-  image: {
+  icon: {
     height: 50,
     width: 50
   },

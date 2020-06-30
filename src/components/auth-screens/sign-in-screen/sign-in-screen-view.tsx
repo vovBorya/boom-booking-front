@@ -42,7 +42,7 @@ const SignInScreenView: React.FC<SignInScreenViewProps> =
 
 
   return(
-    <View style={styles.container}>
+    <View style={styles.scrollContainer}>
       <ScrollView>
         <View style={styles.viewContainer}>
           <BigLogo />
@@ -63,10 +63,10 @@ const SignInScreenView: React.FC<SignInScreenViewProps> =
           <OrangeButton label={translate('actions.signIn')} onClick={signIn} />
           <View style={styles.icons}>
             <TouchableOpacity activeOpacity={activityOpacity} onPress={facebookSingIn}>
-              <Image style={styles.image} source={require(`../../../resources/img/icons/FB.png`)} />
+              <Image style={styles.icon} source={require(`../../../resources/img/icons/FB.png`)} />
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={activityOpacity} onPress={googleSignIn} >
-              <Image style={styles.image} source={require('../../../resources/img/icons/google.png')} />
+              <Image style={styles.icon} source={require('../../../resources/img/icons/google.png')} />
             </TouchableOpacity>
           </View>
         </View>

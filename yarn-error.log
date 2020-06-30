@@ -2941,7 +2941,7 @@ Lockfile:
       unimodules-face-detector-interface "~5.1.0"
       unimodules-file-system-interface "~5.1.0"
       unimodules-font-interface "~5.1.0"
-      unimodules-image-loader-interface "~5.1.0"
+      unimodules-icon-loader-interface "~5.1.0"
       unimodules-permissions-interface "~5.1.0"
       unimodules-sensors-interface "~5.1.0"
       unimodules-task-manager-interface "~5.1.0"
@@ -3385,9 +3385,9 @@ Lockfile:
     dependencies:
       safer-buffer ">= 2.1.2 < 3"
   
-  image-size@^0.6.0:
+  icon-size@^0.6.0:
     version "0.6.3"
-    resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.6.3.tgz#e7e5c65bb534bd7cdcedd6cb5166272a85f75fb2"
+    resolved "https://registry.yarnpkg.com/icon-size/-/icon-size-0.6.3.tgz#e7e5c65bb534bd7cdcedd6cb5166272a85f75fb2"
     integrity sha512-47xSUiQioGaB96nqtp5/q55m0aBQSQdyIloMOc/x+QVTDZLNmXE892IIDrJ0hM1A5vcNUDD5tDffkSP5lCaIIA==
   
   immediate@^3.2.2:
@@ -4244,7 +4244,7 @@ Lockfile:
       fbjs "^1.0.0"
       fs-extra "^1.0.0"
       graceful-fs "^4.1.3"
-      image-size "^0.6.0"
+      icon-size "^0.6.0"
       invariant "^2.2.4"
       jest-haste-map "^24.7.1"
       jest-worker "^24.6.0"
@@ -6057,9 +6057,9 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/unimodules-font-interface/-/unimodules-font-interface-5.1.0.tgz#953c1eb6e1f221f0c7d427d7aba78cce599b4b27"
     integrity sha512-ZKycNecNN0xxGIo9Db2n8RYU+ijlc+hzpE5acVSiIlmMjTsiOODRLkF++yKsZxglGXn/blgtBLrcTQr4jJV4MQ==
   
-  unimodules-image-loader-interface@~5.1.0:
+  unimodules-icon-loader-interface@~5.1.0:
     version "5.1.0"
-    resolved "https://registry.yarnpkg.com/unimodules-image-loader-interface/-/unimodules-image-loader-interface-5.1.0.tgz#40eeecb1d9409b51595b559023230ce50485b626"
+    resolved "https://registry.yarnpkg.com/unimodules-icon-loader-interface/-/unimodules-icon-loader-interface-5.1.0.tgz#40eeecb1d9409b51595b559023230ce50485b626"
     integrity sha512-yU1OPWMtZ9QcW5CxLE1DYWrpJGZ1hRGdoFG3vyk4syUS8QsCPR0HXqcI6KlTpI6wcLA0+HtS+1CmgJCMCUDd4w==
   
   unimodules-permissions-interface@~5.1.0:

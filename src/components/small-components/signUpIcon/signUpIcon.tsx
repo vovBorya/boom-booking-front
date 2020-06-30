@@ -11,7 +11,7 @@ type SignUpIconProps = {
 const SignUpIcon: React.FC<SignUpIconProps> = ({ label, iconAddress, onIconClick }) => {
 
   return(
-    <View style={styles.container}>
+    <View style={styles.scrollContainer}>
       <Text style={styles.label}>{label}</Text>
       <TouchableOpacity style={styles.touchable} onPress={onIconClick}>
       </TouchableOpacity>

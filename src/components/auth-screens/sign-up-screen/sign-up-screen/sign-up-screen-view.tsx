@@ -12,7 +12,7 @@ type SignUpScreenViewProps = {
 const SignUpScreenView: React.FC<SignUpScreenViewProps> = ({ onClientPress, onAdminPress }) => {
 
   return(
-    <View style={styles.container}>
+    <View style={styles.scrollContainer}>
       <ScrollView>
         <View style={styles.viewContainer}>
           <BigLogo />

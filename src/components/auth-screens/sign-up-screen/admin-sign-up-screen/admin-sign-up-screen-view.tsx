@@ -9,7 +9,7 @@ type AdminSignUpScreenViewProps = {
 const AdminSignUpScreenView: React.FC<AdminSignUpScreenViewProps> = () => {
 
   return (
-    <View style={styles.container}>
+    <View style={styles.scrollContainer}>
       <Text>admin sign up</Text>
     </View>
   )
