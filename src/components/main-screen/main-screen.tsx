@@ -8,6 +8,18 @@ import RestaurantView from "../small-components/restaurant-view";
 
 const MainScreen: React.FC = () => {
 
+  const onEventClick = () => {
+    console.log('onEventClick');
+  }
+
+  const onHeartClick = () => {
+    console.log('onHeartClick');
+  }
+
+  const onRestaurantClick = () => {
+    console.log('onRestaurantClick');
+  }
+
   return(
     <View style={styles.scrollContainer}>
       <ScrollView>
@@ -23,16 +35,16 @@ const MainScreen: React.FC = () => {
 
           <Text style={styles.viewTitle} >События</Text>
           <ScrollView style={styles.eventScrollView} horizontal={true}>
-              <EventView />
-              <EventView />
-              <EventView />
+              <EventView onEventClick={onEventClick} />
+              <EventView onEventClick={onEventClick} />
+              <EventView onEventClick={onEventClick} />
           </ScrollView>
 
           <Text style={styles.viewTitle}>Заведения</Text>
           <ScrollView style={styles.restaurantScrollView}>
-            <RestaurantView />
-            <RestaurantView />
-            <RestaurantView />
+            <RestaurantView onHeartClick={onHeartClick} onRestaurantClick={onRestaurantClick} />
+            <RestaurantView onHeartClick={onHeartClick} onRestaurantClick={onRestaurantClick}/>
+            <RestaurantView onHeartClick={onHeartClick} onRestaurantClick={onRestaurantClick}/>
           </ScrollView>
         </View>
       </ScrollView>
