@@ -7,7 +7,7 @@ const SearchPanel: React.FC = ({}) => {
   return(
     <View style={style.searchBorder}>
       <TouchableOpacity style={style.searchTouchable}>
-        <Image style={style.searchTouchable} source={require('../../../resources/img/icons/search.png')} />
+        <Image style={style.searchTouchable} source={require('../../../resources/img/icons/search-o.png')} />
       </TouchableOpacity>
       <TextInput style={style.textInput} />
     </View>
@@ -20,7 +20,7 @@ const style = StyleSheet.create({
     flexDirection: 'row',
     height: 45,
     width: 150,
-    borderWidth: 1,
+    borderWidth: 1.5,
     borderRadius: 30,
     borderColor: colors.defaultBorder
   },
