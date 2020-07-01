@@ -9,13 +9,13 @@ import {InputState} from "../../../utils/enums/enums";
 import {useLazyQuery} from "@apollo/react-hooks";
 import {SIGN_IN} from "../../../constants/queries/sign-in";
 import OrangeButton from "../../small-components/orange-button";
+import { values } from "../../../constants/values";
 
 type SignInScreenViewProps = {
   onChangeEmail: (newString: string) => void
   onChangePassword: (newString: string) => void
   emailState: InputState
   passwordState: InputState
-  activityOpacity: number
   signIn: () => void
   signUp: () => void
   facebookSingIn: () => void
@@ -28,7 +28,6 @@ const SignInScreenView: React.FC<SignInScreenViewProps> =
      onChangePassword,
      emailState,
      passwordState,
-     activityOpacity,
      facebookSingIn,
      googleSignIn,
      signIn,
@@ -40,9 +39,10 @@ const SignInScreenView: React.FC<SignInScreenViewProps> =
     'Пароль должен содержать буквы латинского алфавита разных регистров\n,' +
     'цифры, и спецсимволы !@#$%^&*';
 
+  const { TOUCHABLE_ACTIVITY_OPACITY } = values;
 
   return(
-    <View style={styles.container}>
+    <View style={styles.scrollContainer}>
       <ScrollView>
         <View style={styles.viewContainer}>
           <BigLogo />
@@ -62,16 +62,16 @@ const SignInScreenView: React.FC<SignInScreenViewProps> =
           />
           <OrangeButton label={translate('actions.signIn')} onClick={signIn} />
           <View style={styles.icons}>
-            <TouchableOpacity activeOpacity={activityOpacity} onPress={facebookSingIn}>
-              <Image style={styles.image} source={require(`../../../resources/img/icons/FB.png`)} />
+            <TouchableOpacity activeOpacity={TOUCHABLE_ACTIVITY_OPACITY} onPress={facebookSingIn}>
+              <Image style={styles.icon} source={require(`../../../resources/img/icons/FB.png`)} />
             </TouchableOpacity>
-            <TouchableOpacity activeOpacity={activityOpacity} onPress={googleSignIn} >
-              <Image style={styles.image} source={require('../../../resources/img/icons/google.png')} />
+            <TouchableOpacity activeOpacity={TOUCHABLE_ACTIVITY_OPACITY} onPress={googleSignIn} >
+              <Image style={styles.icon} source={require('../../../resources/img/icons/google.png')} />
             </TouchableOpacity>
           </View>
         </View>
         <View style={styles.viewContainer}>
-          <TouchableOpacity activeOpacity={activityOpacity} onPress={signUp}>
+          <TouchableOpacity activeOpacity={TOUCHABLE_ACTIVITY_OPACITY} onPress={signUp}>
             <Text style={styles.signUp}>{translate('actions.signUp')}</Text>
           </TouchableOpacity>
         </View>
