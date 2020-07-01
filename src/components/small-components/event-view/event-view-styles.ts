@@ -3,20 +3,20 @@ import {colors} from "../../../resources/colors";
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10,
+    margin: 5,
     borderRadius: 20,
     overflow: 'hidden'
   },
   imageBackground: {
-    height: 150,
-    width: 150
+    height: 180,
+    width: 180
   },
-  descriptionView: {
+  captionView: {
     backgroundColor: '#2c2c2c',
     alignItems: 'center'
   },
   eventName: {
-    fontSize: 20,
+    fontSize: 22,
     fontWeight: 'bold',
     color: 'white'
   },

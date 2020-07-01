@@ -4,6 +4,7 @@ import styles from "./main-screen-styles";
 import SearchPanel from "../small-components/search-panel";
 import SettingButton from "../small-components/setting-button";
 import EventView from "../small-components/event-view";
+import RestaurantView from "../small-components/restaurant-view";
 
 const MainScreen: React.FC = () => {
 
@@ -19,18 +20,20 @@ const MainScreen: React.FC = () => {
               <SettingButton />
             </View>
           </View>
-          <ScrollView style={styles.eventView} horizontal={true}>
-            <EventView />
-            <EventView />
-            <EventView />
-            <EventView />
-            <EventView />
+
+          <Text style={styles.viewTitle} >События</Text>
+          <ScrollView style={styles.eventScrollView} horizontal={true}>
+              <EventView />
+              <EventView />
+              <EventView />
           </ScrollView>
 
-          <Text style={{ fontSize: 42 }}>Loremerunt mollit anim i
-            d est laborumLoremerunt mollit anim i
-            d est laborum</Text>
-
+          <Text style={styles.viewTitle}>Заведения</Text>
+          <ScrollView style={styles.restaurantScrollView}>
+            <RestaurantView />
+            <RestaurantView />
+            <RestaurantView />
+          </ScrollView>
         </View>
       </ScrollView>
     </View>

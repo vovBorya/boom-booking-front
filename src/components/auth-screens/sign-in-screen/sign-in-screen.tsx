@@ -22,8 +22,6 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) 
 
   const isPasswordValid = (password: string) => /^(?=.*\d)(?=.*[!@#$%^&*_])(?=.*[a-z])(?=.*[A-Z])[\da-zA-Z!@#$%^&*_]{8,}$/g.test(password)
 
-  const ACTIVITY_OPACITY: number = 0.7;
-
   const [onSignInClick, { called, loading, data, error }] = useLazyQuery(
     SIGN_IN,
     { variables: { email: email, password: password } }
@@ -66,7 +64,6 @@ const SignInScreen: React.FC<SignInScreenProps> = ({ navigation, saveAccount }) 
     onChangePassword={onChangePassword}
     emailState={emailInputState}
     passwordState={passwordInputState}
-    activityOpacity={ACTIVITY_OPACITY}
     signIn={() => onSignInClick()}
     signUp={onSignUpClick}
     facebookSingIn={onFBClick}

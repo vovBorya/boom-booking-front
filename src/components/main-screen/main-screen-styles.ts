@@ -5,31 +5,36 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'flex-start',
+    marginTop: 31.5
   },
   viewContainer: {
     justifyContent: "center",
-    alignItems: "center",
-    marginTop: 50,
-    margin: 20
+    alignItems: "stretch",
+    marginTop: 50
   },
   searchAndSettings: {
     flex: 1,
     flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
   searchPanel: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-start'
+    marginLeft: 20
   },
   settingButton: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'flex-end'
+    marginRight: 20
   },
-  eventView: {
-    margin: 20
+  viewTitle: {
+    fontWeight: 'bold',
+    fontSize: 15,
+    marginTop: 20,
+    marginLeft: 20
+  },
+  eventScrollView: {
+    paddingLeft: 15,
+    padding: 10
+  },
+  restaurantScrollView: {
+    padding: 15
   }
 });
 
