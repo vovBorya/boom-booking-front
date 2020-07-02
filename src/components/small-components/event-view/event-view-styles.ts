@@ -5,7 +5,9 @@ const styles = StyleSheet.create({
   container: {
     margin: 5,
     borderRadius: 20,
-    overflow: 'hidden'
+    overflow: 'hidden',
+    marginBottom: 20,
+    marginTop: 20
   },
   imageBackground: {
     height: 180,
@@ -22,6 +24,12 @@ const styles = StyleSheet.create({
   },
   eventPlace: {
     color: 'white'
+  },
+  shadow: {
+    elevation: 15,
+    shadowOffset: { width: 0, height: 4 },
+    shadowColor: 'black',
+    shadowOpacity: 0.5
   }
 });
 

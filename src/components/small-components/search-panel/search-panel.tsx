@@ -5,7 +5,7 @@ import {colors} from "../../../resources/colors";
 const SearchPanel: React.FC = ({}) => {
 
   return(
-    <View style={style.searchBorder}>
+    <View style={[style.searchBorder, style.shadow]}>
       <TouchableOpacity style={style.searchTouchable}>
         <Image style={style.searchTouchable} source={require('../../../resources/img/icons/search-o.png')} />
       </TouchableOpacity>
@@ -22,7 +22,8 @@ const style = StyleSheet.create({
     width: 150,
     borderWidth: 1.5,
     borderRadius: 30,
-    borderColor: colors.defaultBorder
+    borderColor: colors.defaultBorder,
+    backgroundColor: colors.mainBackground
   },
   searchTouchable: {
     flexDirection: 'row',
@@ -42,6 +43,12 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     marginLeft: 5,
     marginRight: 5
+  },
+  shadow: {
+    elevation: 5,
+    shadowOffset: { width: 5, height: 5 },
+    shadowColor: 'black',
+    shadowOpacity: 1
   }
 })
 

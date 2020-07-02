@@ -29,11 +29,11 @@ const styles = StyleSheet.create({
     marginTop: 20,
     marginLeft: 20
   },
-  eventScrollView: {
+  eventView: {
     paddingLeft: 15,
-    padding: 10
+    paddingRight: 30
   },
-  restaurantScrollView: {
+  restaurantView: {
     padding: 15
   }
 });
