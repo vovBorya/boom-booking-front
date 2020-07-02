@@ -3,16 +3,29 @@ import {View, TouchableOpacity, ImageBackground, Text, Image} from "react-native
 import styles from './restaurant-view-styles';
 import { values } from "../../../constants/values";
 
+export type RestaurantInfo = {
+  id: number
+  name: string
+  categories: { title: string }
+}
+
 type RestaurantViewProps = {
+  restaurantInfo: RestaurantInfo
+  /*id: number
+  name: string
+  categories: { title: string }*/
   onHeartClick: () => void
   onRestaurantClick: () => void
 }
 
 const RestaurantView: React.FC<RestaurantViewProps> =
   ({
+    restaurantInfo,
     onHeartClick,
     onRestaurantClick
    }) => {
+
+  const { id, name, categories } = restaurantInfo;
 
   const { TOUCHABLE_ACTIVITY_OPACITY } = values;
 
@@ -51,7 +64,7 @@ const RestaurantView: React.FC<RestaurantViewProps> =
       <View style={styles.captionView}>
         <View>
           <View style={styles.restaurantNameView}>
-            <Text style={styles.restaurantName}>Ресторан 1</Text>
+            <Text style={styles.restaurantName}>{ name }</Text>
           </View>
           <View style={styles.restaurantAddressView}>
             <Text style={styles.restaurantAddress}>
@@ -68,7 +81,7 @@ const RestaurantView: React.FC<RestaurantViewProps> =
               source={require('../../../resources/img/icons/star-o.png')} />
           </View>
 
-          <Text style={styles.kitchenText} >Афганская</Text>
+          <Text style={styles.kitchenText} >{ categories.title }</Text>
         </View>
       </View>
     </TouchableOpacity>
