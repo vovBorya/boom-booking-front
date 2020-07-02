@@ -11,9 +11,6 @@ export type RestaurantInfo = {
 
 type RestaurantViewProps = {
   restaurantInfo: RestaurantInfo
-  /*id: number
-  name: string
-  categories: { title: string }*/
   onHeartClick: () => void
   onRestaurantClick: () => void
 }
@@ -42,7 +39,7 @@ const RestaurantView: React.FC<RestaurantViewProps> =
 
   return(
     <TouchableOpacity
-      style={styles.container}
+      style={[styles.container, styles.shadow]}
       activeOpacity={TOUCHABLE_ACTIVITY_OPACITY}
       onPress={onRestaurantClick}
     >

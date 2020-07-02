@@ -1,11 +1,12 @@
 import React from "react";
-import {Text, View, StyleSheet, TouchableOpacity, Image} from "react-native";
+import {StyleSheet, TouchableOpacity, Image} from "react-native";
 import {colors} from "../../../resources/colors";
+import { shadow } from "../../../constants/shadow";
 
 const SettingButton = () => {
 
   return(
-      <TouchableOpacity style={styles.touchable}>
+      <TouchableOpacity style={[styles.touchable, styles.shadow]}>
         <Image style={styles.icon} source={require('../../../resources/img/icons/gear-w.png')} />
       </TouchableOpacity>
   );
@@ -25,6 +26,12 @@ const styles = StyleSheet.create({
     borderRadius: 30,
     borderColor: colors.defaultBorder,
     backgroundColor: colors.defaultBorder
+  },
+  shadow: {
+    elevation: 10,
+    shadowOffset: { width: 5, height: 5 },
+    shadowColor: 'black',
+    shadowOpacity: 1
   }
 })
 

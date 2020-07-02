@@ -73,6 +73,12 @@ const styles = StyleSheet.create({
   kitchenText: {
     color: 'white',
     fontSize: 12,
+  },
+  shadow: {
+    elevation: 15,
+    shadowOffset: { width: 0, height: 4 },
+    shadowColor: 'black',
+    shadowOpacity: 0.5
   }
 });
 

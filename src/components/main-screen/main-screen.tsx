@@ -44,8 +44,9 @@ const MainScreen: React.FC = () => {
           </View>
 
           <Text style={styles.viewTitle} >События</Text>
-          <View style={styles.eventScrollView} >
+          <View>
             <FlatList
+              style={styles.eventView}
               data={data.events}
               renderItem={({ item }) => (
                 <EventView
@@ -60,7 +61,7 @@ const MainScreen: React.FC = () => {
           </View>
 
           <Text style={styles.viewTitle}>Заведения</Text>
-          <SafeAreaView style={styles.restaurantScrollView}>
+          <SafeAreaView style={styles.restaurantView}>
             <FlatList
               data={data.restaurants}
               renderItem={({ item }) => (

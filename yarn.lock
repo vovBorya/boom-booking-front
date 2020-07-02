@@ -1179,6 +1179,11 @@
     wcwidth "^1.0.1"
     ws "^1.1.0"
 
+"@react-native-community/google-signin@^4.0.3":
+  version "4.0.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/google-signin/-/google-signin-4.0.3.tgz#66fbdd469e5895ec787224334d480c1c867240e8"
+  integrity sha512-0RyMHAPTOejxXuHkcrVLJ9Co1hxG/b1shmtn29QSjZ9W8oLj23gyLhJI4jjca389jToVjr2HsXsDXfNU4CA2Uw==
+
 "@react-native-community/masked-view@0.1.6":
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.6.tgz#c7f2ac187c1f25aa8c30d11baa8f4398eca3bb84"
@@ -5043,6 +5048,11 @@ react-native-screens@~2.2.0:
   dependencies:
     debounce "^1.2.0"
 
+react-native-shadow@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-native-shadow/-/react-native-shadow-1.2.2.tgz#08991cd14b71e32f2fc6363911c139d231949a66"
+  integrity sha512-kwTmqRKmPEML9KbJi0uvvKd+67rOJQcr3IyNp9bg+qi/H+Wnwev/Mr8sUiUZlYEJ433ii2iNwpjc1ERMjHtMWw==
+
 react-native-svg-transformer@^0.14.3:
   version "0.14.3"
   resolved "https://registry.yarnpkg.com/react-native-svg-transformer/-/react-native-svg-transformer-0.14.3.tgz#43c8e176f5a11f16f39b87a64018e0ac090ffbdb"
@@ -5053,10 +5063,10 @@ react-native-svg-transformer@^0.14.3:
     path-dirname "^1.0.2"
     semver "^5.6.0"
 
-react-native-svg@11.0.1:
-  version "11.0.1"
-  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-11.0.1.tgz#e92e7e9f9cb2604333fd5014fd4edcf62fea6496"
-  integrity sha512-XriIwSoe9eTtKyqxpNC6POSOqmXAB9mZQOm5tMoaimEqQOMfzgYrBoF9nY6VPGmaH5dRlWBqnnBf389APiZFcQ==
+react-native-svg@X.X.X:
+  version "12.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-svg/-/react-native-svg-12.1.0.tgz#acfe48c35cd5fca3d5fd767abae0560c36cfc03d"
+  integrity sha512-1g9qBRci7man8QsHoXn6tP3DhCDiypGgc6+AOWq+Sy+PmP6yiyf8VmvKuoqrPam/tf5x+ZaBT2KI0gl7bptZ7w==
   dependencies:
     css-select "^2.1.0"
     css-tree "^1.0.0-alpha.39"

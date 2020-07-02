@@ -1,7 +1,8 @@
-import {Text, TextInput, View} from "react-native";
+import {Image, Text, TextInput, View} from "react-native";
 import styles from "./text-input-with-label-styles";
 import React from "react";
 import {InputState} from "../../../utils/enums/enums";
+import { shadow } from "../../../constants/shadow";
 
 type TextInputWithLabelProps = {
   label: string
@@ -20,32 +21,51 @@ const TextInputWithLabel: React.FC<TextInputWithLabelProps> =
      description
   }) => {
 
-  const getInputStyle = (state: InputState): any => {
-    switch (state) {
+  const getInputStyle = (inputState: InputState): any => {
+    switch (inputState) {
       case InputState.valid:
-        return {...styles.input, ...styles.validInput};
+        return [styles.input, styles.validInput, styles.shadow];
       case InputState.invalid:
-        return {...styles.input, ...styles.invalidInput};
+        return [styles.input, styles.invalidInput, styles.shadow];
       case InputState.unused:
-        return {...styles.input, ...styles.unusedInput};
+        return [styles.input, styles.unusedInput, styles.shadow];
+    }
+  };
+
+  const getInputIcon = (inputState: InputState) => {
+    switch (inputState) {
+      case InputState.valid:
+        return require('../../../resources/img/icons/yes.png');
+      case InputState.invalid:
+        return require('../../../resources/img/icons/no.png');
+      case InputState.unused:
+        return null;
     }
   }
 
-  const contentDescription = inputState == InputState.invalid ?
-    <Text style={styles.description}>
-        {description}
-    </Text> : null;
+  const contentDescription = inputState == InputState.invalid
+    ?
+      <Text style={styles.description}>
+          {description}
+      </Text>
+    : null;
 
   return (
     <View style={styles.labelAndInput}>
       <Text>{ label }</Text>
-      <TextInput
-        style={getInputStyle(inputState)}
-        // @ts-ignore
-        textAlign="center"
-        onChangeText={setText}
-        secureTextEntry={hideText}
-      />
+        <View style={getInputStyle(inputState)}>
+          <TextInput
+            style={styles.textInput}
+            // @ts-ignore
+            textAlign="center"
+            onChangeText={setText}
+            secureTextEntry={hideText}
+          />
+          <Image
+            style={styles.icon}
+            source={getInputIcon(inputState)}
+          />
+        </View>
       {contentDescription}
     </View>
   );
