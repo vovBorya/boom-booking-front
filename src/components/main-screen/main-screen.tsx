@@ -8,6 +8,7 @@ import RestaurantView from "../small-components/restaurant-view";
 import { RESTAURANTS } from "../../constants/queries/restaurants";
 import {useQuery} from "@apollo/react-hooks";
 import SpinnerScreen from "../small-components/loader";
+import ItemList from "../small-components/item-list";
 
 const MainScreen: React.FC = () => {
 
@@ -44,36 +45,33 @@ const MainScreen: React.FC = () => {
           </View>
 
           <Text style={styles.viewTitle} >События</Text>
-          <View>
-            <FlatList
+          <ScrollView horizontal={true}>
+            <ItemList
               style={styles.eventView}
               data={data.events}
-              renderItem={({ item }) => (
+              renderItem={item =>
                 <EventView
                   event={item}
                   restaurantName={item.restaurant.name}
                   onEventClick={onEventClick}
-                />
-              )}
-              keyExtractor={item => item.id.toString()}
+                />}
               horizontal={true}
             />
-          </View>
+          </ScrollView>
 
           <Text style={styles.viewTitle}>Заведения</Text>
-          <SafeAreaView style={styles.restaurantView}>
-            <FlatList
+          <ScrollView>
+            <ItemList
+              style={styles.restaurantView}
               data={data.restaurants}
-              renderItem={({ item }) => (
+              renderItem={ item  =>
                 <RestaurantView
                   restaurantInfo={item}
                   onHeartClick={onHeartClick}
                   onRestaurantClick={onRestaurantClick}
-                />
-              )}
-              keyExtractor={item => item.id.toString()}
+                />}
             />
-          </SafeAreaView>
+          </ScrollView>
         </View>
       </ScrollView>
     </View>

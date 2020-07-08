@@ -10,6 +10,7 @@ import {useLazyQuery} from "@apollo/react-hooks";
 import {SIGN_IN} from "../../../constants/queries/sign-in";
 import OrangeButton from "../../small-components/orange-button";
 import { values } from "../../../constants/values";
+import { GoogleSignin, GoogleSigninButton } from '@react-native-community/google-signin';
 
 type SignInScreenViewProps = {
   onChangeEmail: (newString: string) => void
@@ -67,6 +68,12 @@ const SignInScreenView: React.FC<SignInScreenViewProps> =
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={TOUCHABLE_ACTIVITY_OPACITY} onPress={googleSignIn} >
               <Image style={styles.icon} source={require('../../../resources/img/icons/google.png')} />
+              {/*<GoogleSigninButton
+                style={{ width: 192, height: 48 }}
+                size={GoogleSigninButton.Size.Wide}
+                color={GoogleSigninButton.Color.Dark}
+                onPress={() => console.log('onPress')}
+              />*/}
             </TouchableOpacity>
           </View>
         </View>

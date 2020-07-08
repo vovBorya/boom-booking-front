@@ -12,6 +12,10 @@ const saveAccount = (account: AccountType) => ({
   payload: account
 })
 
+const googleSignIn = (token: string) => ({
+  type: "SIGN_IN",
+  payload: token
+});
 
 export {
   saveAccount,

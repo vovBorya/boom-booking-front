@@ -31,7 +31,8 @@ const styles = StyleSheet.create({
   },
   eventView: {
     paddingLeft: 15,
-    paddingRight: 30
+    paddingRight: 15,
+    paddingBottom: 15
   },
   restaurantView: {
     padding: 15
