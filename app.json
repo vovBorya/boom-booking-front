@@ -7,7 +7,7 @@
       "android",
       "web"
     ],
-    "version": "1.0.0",
+    "version": "0.0.1",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -23,7 +23,17 @@
     ],
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "string"
+      "bundleIdentifier": "com.boombooking.boombooking",
+      "buildNumber": "0.0.1",
+      "config": {
+        "googleSignIn": {
+          "reservedClientId": "xxx"
+        }
+      }
+    },
+    "android": {
+      "package": "com.boombooking.boombooking",
+      "versionCode": 1
     },
     "packagerOpts": {
       "config": "metro.config.js",

@@ -4,10 +4,8 @@ import styles from "./event-view-styles";
 import { values } from "../../../constants/values";
 
 type EventViewProps = {
-  event: {
-    id: number
-    name: string
-  }
+  key: number
+  eventName: string
   restaurantName: string
   onEventClick: () => void
 };

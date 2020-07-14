@@ -1,6 +1,6 @@
 import gql from 'graphql-tag'
 
-export const RESTAURANTS = gql`
+export const RESTAURANT_AND_EVENTS = gql`
     query ($restaurantSearchOptions: RestaurantSearchOptionsInput!,
         $eventSearchOptions: EventSearchOptionsInput!){
         restaurants(searchOptions: $restaurantSearchOptions) {

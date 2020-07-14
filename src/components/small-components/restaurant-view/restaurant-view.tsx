@@ -4,12 +4,12 @@ import styles from './restaurant-view-styles';
 import { values } from "../../../constants/values";
 
 export type RestaurantInfo = {
-  id: number
   name: string
   categories: { title: string }
 }
 
 type RestaurantViewProps = {
+  key: number
   restaurantInfo: RestaurantInfo
   onHeartClick: () => void
   onRestaurantClick: () => void
@@ -22,7 +22,7 @@ const RestaurantView: React.FC<RestaurantViewProps> =
     onRestaurantClick
    }) => {
 
-  const { id, name, categories } = restaurantInfo;
+  const { name, categories } = restaurantInfo;
 
   const { TOUCHABLE_ACTIVITY_OPACITY } = values;
 

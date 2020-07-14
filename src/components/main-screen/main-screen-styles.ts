@@ -3,7 +3,7 @@ import { StyleSheet } from "react-native";
 const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: 'stretch',
     justifyContent: 'flex-start',
     marginTop: 31.5
   },
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     paddingBottom: 15
   },
   restaurantView: {
-    padding: 15
+    padding: 15,
   }
 });
 

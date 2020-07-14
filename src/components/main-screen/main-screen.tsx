@@ -5,14 +5,14 @@ import SearchPanel from "../small-components/search-panel";
 import SettingButton from "../small-components/setting-button";
 import EventView from "../small-components/event-view";
 import RestaurantView from "../small-components/restaurant-view";
-import { RESTAURANTS } from "../../constants/queries/restaurants";
+import { RESTAURANT_AND_EVENTS } from "../../constants/queries/restaurants-and-events";
 import {useQuery} from "@apollo/react-hooks";
 import SpinnerScreen from "../small-components/loader";
 import ItemList from "../small-components/item-list";
 
 const MainScreen: React.FC = () => {
 
-  const { loading, error, data } = useQuery(RESTAURANTS, {
+  const { loading, error, data } = useQuery(RESTAURANT_AND_EVENTS, {
     variables: {"restaurantSearchOptions": {},
                 "eventSearchOptions": {} }
   });
@@ -51,7 +51,8 @@ const MainScreen: React.FC = () => {
               data={data.events}
               renderItem={item =>
                 <EventView
-                  event={item}
+                  key={item.id}
+                  eventName={item.name}
                   restaurantName={item.restaurant.name}
                   onEventClick={onEventClick}
                 />}
@@ -66,6 +67,7 @@ const MainScreen: React.FC = () => {
               data={data.restaurants}
               renderItem={ item  =>
                 <RestaurantView
+                  key={item.id}
                   restaurantInfo={item}
                   onHeartClick={onHeartClick}
                   onRestaurantClick={onRestaurantClick}
