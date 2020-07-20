@@ -1,3 +1,3 @@
-import SpinnerScreen from "./spinner-screen";
+import Spinner from "./spinner";
 
-export default SpinnerScreen
+export default Spinner
