@@ -16,7 +16,7 @@ const EventView: React.FC<EventViewProps> = ({ key, eventName, onEventClick, res
 
   return(
     <TouchableOpacity
-      style={{ ...styles.container, ...styles.shadow}}
+      style={{ ...styles.scrollContainer, ...styles.shadow}}
       activeOpacity={TOUCHABLE_ACTIVITY_OPACITY}
       onPress={onEventClick}
     >

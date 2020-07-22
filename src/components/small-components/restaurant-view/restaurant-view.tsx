@@ -27,7 +27,7 @@ const RestaurantView: React.FC<RestaurantViewProps> =
 
     return(
     <TouchableOpacity
-      style={[styles.container, styles.shadow]}
+      style={[styles.scrollContainer, styles.shadow]}
       activeOpacity={TOUCHABLE_ACTIVITY_OPACITY}
       onPress={onRestaurantClick}
     >
