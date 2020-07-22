@@ -55,8 +55,6 @@ export default class MainScreen extends React.Component<any, MainScreenStateType
     console.log('onRestaurantClick');
   }
 
-  /*if (loading) return <Spinner/>;*/
-
   render() {
 
     const { loading, error, data } = this.state;
