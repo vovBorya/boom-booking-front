@@ -4,22 +4,27 @@ import {colors} from "../../../resources/colors";
 const styles = StyleSheet.create({
   container: {
     margin: 5,
-    borderRadius: 20,
+    borderRadius: 15,
     overflow: 'hidden',
     marginBottom: 20,
     marginTop: 20
   },
   imageBackground: {
-    height: 180,
-    width: 180
+    flex: 3,
+    flexDirection: "column",
+    justifyContent: "flex-end",
+    height: 150,
+    width: 150
   },
   captionView: {
+    height: 40,
     backgroundColor: '#2c2c2c',
-    alignItems: 'center'
+    opacity: 0.8,
+    alignItems: 'center',
+    justifyContent: "center"
   },
   eventName: {
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontSize: 14,
     color: 'white'
   },
   eventPlace: {

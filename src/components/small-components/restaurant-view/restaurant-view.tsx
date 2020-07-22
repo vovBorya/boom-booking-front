@@ -1,43 +1,31 @@
-import React, { useState } from "react";
+import React from "react";
 import {View, TouchableOpacity, ImageBackground, Text, Image} from "react-native";
 import styles from './restaurant-view-styles';
 import { values } from "../../../constants/values";
+import StarIcon from "../../../resources/img/icons/star.svg";
 
 export type RestaurantInfo = {
-  id: number
   name: string
   categories: { title: string }
 }
 
 type RestaurantViewProps = {
+  key: number
   restaurantInfo: RestaurantInfo
-  onHeartClick: () => void
   onRestaurantClick: () => void
 }
 
 const RestaurantView: React.FC<RestaurantViewProps> =
   ({
     restaurantInfo,
-    onHeartClick,
     onRestaurantClick
    }) => {
 
-  const { id, name, categories } = restaurantInfo;
+  const { name, categories } = restaurantInfo;
 
   const { TOUCHABLE_ACTIVITY_OPACITY } = values;
 
-  const [ isFavorite, setIsFavorite ] = useState<boolean>(false);
-
-  const heartIcon = isFavorite
-    ? require('../../../resources/img/icons/heart-o.png')
-    : require('../../../resources/img/icons/heart-full-o.png');
-
-  const onFavoriteClick = () => {
-    setIsFavorite(!isFavorite);
-    onHeartClick();
-  }
-
-  return(
+    return(
     <TouchableOpacity
       style={[styles.container, styles.shadow]}
       activeOpacity={TOUCHABLE_ACTIVITY_OPACITY}
@@ -47,40 +35,24 @@ const RestaurantView: React.FC<RestaurantViewProps> =
         style={styles.imageBackground}
         source={require('../../../resources/img/restaurant.jpg')}
       >
-        <TouchableOpacity
-          style={styles.touchableIcon}
-          activeOpacity={TOUCHABLE_ACTIVITY_OPACITY}
-          onPress={onFavoriteClick}
-        >
-          <Image
-            style={styles.icon}
-            source={heartIcon}
-          />
-        </TouchableOpacity>
-      </ImageBackground>
-      <View style={styles.captionView}>
-        <View>
-          <View style={styles.restaurantNameView}>
+        <View style={styles.captionView}>
+
+          <View style={styles.restaurantNameAndKitchenView}>
             <Text style={styles.restaurantName}>{ name }</Text>
           </View>
-          <View style={styles.restaurantAddressView}>
-            <Text style={styles.restaurantAddress}>
-              ул. Пушкина, дом Колотушкина
-            </Text>
+
+          <View style={styles.distanceView}>
+            <Text style={styles.distanceText}>500m</Text>
+
+            <Text style={styles.kitchenText} >{ categories.title }Italian</Text>
+
+            <View style={styles.star}>
+              <Text style={styles.rating}>3.0</Text>
+              <StarIcon width={20} height={20} />
+            </View>
           </View>
         </View>
-
-        <View style={styles.starAndKitchen}>
-          <View style={styles.star}>
-            <Text style={styles.rating}>3/5</Text>
-            <Image
-              style={styles.icon}
-              source={require('../../../resources/img/icons/star-o.png')} />
-          </View>
-
-          <Text style={styles.kitchenText} >{ categories.title }</Text>
-        </View>
-      </View>
+      </ImageBackground>
     </TouchableOpacity>
   )
 }

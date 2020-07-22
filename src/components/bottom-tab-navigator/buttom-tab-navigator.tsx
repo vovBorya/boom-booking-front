@@ -3,7 +3,6 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MainScreen from "../main-screen";
 import AuthScreens from "../auth-screens";
 import styles from "./bottom-tab-navigator-style";
-import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -22,8 +21,8 @@ const BottomTabNavigator = () => {
         component={MainScreen}
         options={{
           title: 'Home',
-          tabBarIcon: ({color, size = 20}) => (
-            <MaterialCommunityIcons name="anchor" color={color} size={size} />
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons name="anchor" color={color} size={20} />
           )
         }}
       />
@@ -32,8 +31,8 @@ const BottomTabNavigator = () => {
         component={AuthScreens}
         options={{
           tabBarLabel: 'Profile',
-          tabBarIcon: ({color, size = 20}) => (
-            <MaterialCommunityIcons name="account" color={color} size={size} />
+          tabBarIcon: ({color}) => (
+            <MaterialCommunityIcons name="account" color={color} size={20} />
           )
         }}
       />

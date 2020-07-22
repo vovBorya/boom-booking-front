@@ -5,16 +5,16 @@ import {colors} from "../../../resources/colors";
 const SearchPanel: React.FC = ({}) => {
 
   return(
-    <View style={[style.searchBorder, style.shadow]}>
-      <TouchableOpacity style={style.searchTouchable}>
-        <Image style={style.searchTouchable} source={require('../../../resources/img/icons/search-o.png')} />
+    <View style={styles.searchBorder}>
+      <TouchableOpacity style={styles.searchTouchable}>
+        <Image style={styles.searchTouchable} source={require('../../../resources/img/icons/search-o.png')} />
       </TouchableOpacity>
-      <TextInput style={style.textInput} />
+      <TextInput style={styles.textInput} />
     </View>
   )
 }
 
-const style = StyleSheet.create({
+const styles = StyleSheet.create({
   searchBorder: {
     flex: 1,
     flexDirection: 'row',
@@ -22,7 +22,7 @@ const style = StyleSheet.create({
     width: 150,
     borderWidth: 1.5,
     borderRadius: 30,
-    borderColor: colors.defaultBorder,
+    borderColor: "black",
     backgroundColor: colors.mainBackground
   },
   searchTouchable: {
@@ -43,12 +43,6 @@ const style = StyleSheet.create({
     justifyContent: 'center',
     marginLeft: 5,
     marginRight: 5
-  },
-  shadow: {
-    elevation: 5,
-    shadowOffset: { width: 5, height: 5 },
-    shadowColor: 'black',
-    shadowOpacity: 1
   }
 })
 

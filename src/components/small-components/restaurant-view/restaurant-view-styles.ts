@@ -1,78 +1,58 @@
 import { StyleSheet } from "react-native";
+import {colors} from "../../../resources/colors";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "column",
     margin: 5,
     marginBottom: 15,
     overflow: 'hidden',
-    borderRadius: 35
+    borderRadius: 15
   },
   imageBackground: {
-    flex: 1,
-    alignItems: 'flex-end',
-    justifyContent: 'flex-start',
+    flex: 3,
+    flexDirection: "column",
+    justifyContent: "flex-end",
     width: '100%',
-    height: 200
-  },
-  touchableIcon: {
-    backgroundColor: '#2c2c2c',
-    height: 60,
-    width: 60,
-    padding: 5,
-    borderBottomLeftRadius: 35
-  },
-  icon: {
-    width: 50,
-    height: 50
+    height: 150
   },
   captionView: {
-    flex: 1,
-    flexDirection: 'row',
+    height: 60,
     backgroundColor: '#2c2c2c',
-    paddingLeft: 22,
-    paddingRight: 22,
-    paddingBottom: 12
+    opacity: 0.8,
   },
-  restaurantNameView: {
+  restaurantNameAndKitchenView: {
     flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-start'
+    alignItems: "center",
+    justifyContent: "center"
   },
   restaurantName: {
     color: 'white',
-    fontSize: 25,
-    fontWeight: 'bold'
+    fontSize: 18,
+    lineHeight: 21
   },
-  restaurantAddressView: {},
-  restaurantAddress: {
+  kitchenText: {
     color: 'white',
-    fontSize: 15
+    fontSize: 14
   },
-  starAndKitchen: {
+  distanceView: {
     flex: 1,
-    flexDirection: 'column',
-    alignItems: 'flex-end',
-    justifyContent: 'flex-end'
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginLeft: 10,
+    marginRight: 10
+  },
+  distanceText: {
+    color: colors.mainBackground,
+    fontSize: 16
   },
   star: {
-    flex: 1,
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'flex-end'
+    flexDirection: "row"
   },
   rating: {
     fontSize: 17,
     color: 'white',
     marginRight: 5
-  },
-  kitchenView: {
-  },
-  kitchenText: {
-    color: 'white',
-    fontSize: 12,
   },
   shadow: {
     elevation: 15,

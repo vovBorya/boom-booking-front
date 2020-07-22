@@ -7,7 +7,7 @@ import store from "./src/store";
 import BottomTabNavigator from "./src/components/bottom-tab-navigator";
 
 const client = new ApolloClient({
-  uri: 'http://ec2-3-128-207-64.us-east-2.compute.amazonaws.com/v1'
+  uri: 'http://boombooking-dev.eba-zwieqwvi.us-east-2.elasticbeanstalk.com/v1'
 });
 
 export default function App() {

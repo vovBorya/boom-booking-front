@@ -2,7 +2,7 @@ import React from "react";
 import {Image, ScrollView, Text, TextInput, TouchableOpacity, View} from "react-native";
 import styles from "./sign-up-screen-styles";
 import {BigLogo} from "../../../small-components/big-logo/big-logo";
-import SignUpIcon from "../../../small-components/signUpIcon";
+import SignUpIcon from "../../../small-components/sign-up-icon";
 
 type SignUpScreenViewProps = {
   onClientPress: () => void
