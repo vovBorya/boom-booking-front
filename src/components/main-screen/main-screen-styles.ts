@@ -23,11 +23,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 15
   },
-  eventView: {
+  eventItemList: {
     paddingLeft: 15,
     paddingRight: 15
   },
-  restaurantView: {
+  restaurantItemList: {
     padding: 15,
   }
 });

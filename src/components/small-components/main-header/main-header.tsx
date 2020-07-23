@@ -7,7 +7,7 @@ import SearchIcon from "../../../resources/img/icons/search.svg";
 const MainHeader = () => {
 
   return(
-    <View style={[styles.container, styles.shadow]}>
+    <View style={[styles.scrollContainer, styles.shadow]}>
       <View style={styles.searchBorder}>
         <TouchableOpacity style={styles.searchTouchable}>
           <SearchIcon />
@@ -19,13 +19,13 @@ const MainHeader = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  scrollContainer: {
     alignItems: "center",
     backgroundColor: colors.defaultBorder,
-    height: 60,
+    height: 93,
     width: "100%",
     padding: 7,
-    marginTop: 31.5
+    paddingTop: 33
   },
   searchPanel: {
   },

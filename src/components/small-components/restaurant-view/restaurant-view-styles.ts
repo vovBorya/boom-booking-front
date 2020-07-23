@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import {colors} from "../../../resources/colors";
 
 const styles = StyleSheet.create({
-  container: {
+  scrollContainer: {
     flex: 1,
     margin: 5,
     marginBottom: 15,

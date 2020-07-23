@@ -9,7 +9,7 @@ import {createStackNavigator} from "@react-navigation/stack";
 
 const AuthStack = createStackNavigator();
 
-const Screens = () => {
+const AuthScreens = () => {
 
   return(
     <AuthStack.Navigator
@@ -38,8 +38,8 @@ const Screens = () => {
       options={{ title: "регистрация как admin" }}
       />
     </AuthStack.Navigator>
-  )
-}
+  );
+};
 
-export default Screens
+export default AuthScreens;
 

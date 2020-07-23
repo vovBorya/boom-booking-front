@@ -4,6 +4,7 @@ import MainScreen from "../main-screen";
 import AuthScreens from "../auth-screens";
 import styles from "./bottom-tab-navigator-style";
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import OrdersScreens from "../orders-screens";
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -23,6 +24,16 @@ const BottomTabNavigator = () => {
           title: 'Home',
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons name="anchor" color={color} size={20} />
+          )
+        }}
+      />
+      <Tab.Screen
+        name='ordersScreens'
+        component={OrdersScreens}
+        options={{
+          title: "Orders",
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons name="text" color={color} size={20} />
           )
         }}
       />
