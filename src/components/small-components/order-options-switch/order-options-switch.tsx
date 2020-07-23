@@ -5,7 +5,8 @@ import {styles} from "./order-options-switch-style";
 
 type OrderOptionsSwitchPropsType = {
   selectedOrderOption: SelectedOrderOption
-  switchOrderOption: () => void
+  onCurrentOrderOptionClick: () => void
+  onPreviousOrderOptionClick: () => void
 }
 
 export default class OrderOptionsSwitch extends Component<OrderOptionsSwitchPropsType, any>{
@@ -34,7 +35,7 @@ export default class OrderOptionsSwitch extends Component<OrderOptionsSwitchProp
       <View style={styles.container}>
         <TouchableOpacity
           style={currentOrdersOptionStyle}
-          onPress={this.props.switchOrderOption}
+          onPress={this.props.onCurrentOrderOptionClick}
         >
           <Text style={currentOrdersOptionTitleStyle}>
             Current orders
@@ -42,7 +43,7 @@ export default class OrderOptionsSwitch extends Component<OrderOptionsSwitchProp
         </TouchableOpacity>
         <TouchableOpacity
           style={previousOrdersOptionStyle}
-          onPress={this.props.switchOrderOption}
+          onPress={this.props.onPreviousOrderOptionClick}
         >
           <Text style={previousOrdersOptionTitleStyle}>
             Previous orders

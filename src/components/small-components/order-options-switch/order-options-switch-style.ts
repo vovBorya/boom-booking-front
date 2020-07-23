@@ -4,18 +4,22 @@ import {colors} from "../../../resources/colors";
 export const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: "row"
+    flexDirection: "row",
+    margin: 10
   },
   currentOrdersOption: {
+    alignItems: "center",
     width: 175,
     height: 35,
     padding: 5,
     borderColor: colors.defaultBorder,
     borderWidth: 1,
     borderBottomLeftRadius: 7,
-    borderTopLeftRadius: 7
+    borderTopLeftRadius: 7,
+    elevation: 5
   },
   previousOrdersOption: {
+    alignItems: "center",
     width: 175,
     height: 35,
     padding: 5,
@@ -23,13 +27,15 @@ export const styles = StyleSheet.create({
     borderRightWidth: 1,
     borderWidth: 1,
     borderBottomRightRadius: 7,
-    borderTopRightRadius: 7
+    borderTopRightRadius: 7,
+    elevation: 5
   },
   activeOption: {
     backgroundColor: colors.defaultBorder,
     color: "white"
   },
   activeOptionTitle: {
+    fontWeight: "bold",
     color: "white"
   },
   inactiveOptionTitle: {

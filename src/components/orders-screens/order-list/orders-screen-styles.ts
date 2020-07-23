@@ -4,7 +4,7 @@ import {colors} from "../../../resources/colors";
 export const styles = StyleSheet.create({
   scrollContainer: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "stretch",
     justifyContent: 'flex-start',
     backgroundColor: colors.mainBackground
   },
@@ -14,5 +14,12 @@ export const styles = StyleSheet.create({
     marginTop: 20
   },
   orderOptions: {
+    flex: 1,
+    alignItems: "center"
+  },
+  orderItemList: {
+    marginTop: 30,
+    paddingLeft: 15,
+    paddingRight: 15
   }
 })

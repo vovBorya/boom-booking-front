@@ -12,12 +12,12 @@ import MainHeader from "../small-components/main-header";
 type MainScreenStateType = {
   loading: boolean
   error: any
-  data: any
+  date: any
 }
 
 export default class MainScreen extends React.Component<any, MainScreenStateType> {
 
-  /*const { loading, error, data } = useQuery(RESTAURANTS_AND_EVENTS, {
+  /*const { loading, error, date } = useQuery(RESTAURANTS_AND_EVENTS, {
     variables: {"restaurantSearchOptions": {},
                 "eventSearchOptions": {} }
   });*/
@@ -30,7 +30,7 @@ export default class MainScreen extends React.Component<any, MainScreenStateType
 
   componentDidMount() {
     /*this.setState((state) => {
-      const { loading, error, data } = useQuery(RESTAURANTS_AND_EVENTS, {
+      const { loading, error, date } = useQuery(RESTAURANTS_AND_EVENTS, {
         variables: {"restaurantSearchOptions": {},
           "eventSearchOptions": {} }
       });
@@ -38,7 +38,7 @@ export default class MainScreen extends React.Component<any, MainScreenStateType
       return {
         loading,
         error,
-        data
+        date
       }
     })*/
   }
@@ -63,7 +63,8 @@ export default class MainScreen extends React.Component<any, MainScreenStateType
       ?
       <ScrollView horizontal={true}>
         <ItemList
-          style={styles.eventView}
+          style={styles.eventItemList}
+          // @ts-ignore
           data={data.events}
           renderItem={item =>
             <EventView
@@ -81,7 +82,8 @@ export default class MainScreen extends React.Component<any, MainScreenStateType
       ?
       <ScrollView>
         <ItemList
-          style={styles.restaurantView}
+          style={styles.restaurantItemList}
+          // @ts-ignore
           data={data.restaurants}
           renderItem={item =>
             <RestaurantView
