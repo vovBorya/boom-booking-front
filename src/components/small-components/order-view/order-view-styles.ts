@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import {colors} from "../../../resources/colors";
 
 export const styles = StyleSheet.create({
-  container: {
+  containerView: {
     overflow: 'hidden',
     borderRadius: 15,
     marginBottom: 20,
@@ -10,14 +10,14 @@ export const styles = StyleSheet.create({
   },
   imageBackground: {
     width: "100%",
-    height: 220,
+    height: 200,
     opacity: 2
   },
   childView: {
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
-    backgroundColor: 'rgba(0,0,0,0.4)'
+    backgroundColor: 'rgba(0,0,0,0.6)'
   },
   restaurantNameView: {
     flex: 1,
@@ -38,14 +38,14 @@ export const styles = StyleSheet.create({
   dateTimeGuestsView: {
     flex: 1,
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "center"
   },
   dateTimeGuestsTitle: {
-    fontSize: 14,
+    fontSize: 16,
     color: "white"
   },
   dateTimeGuestsValue: {
-    fontSize: 17,
+    fontSize: 19,
     color: "white"
   },
   locationPriceRow: {
@@ -57,21 +57,10 @@ export const styles = StyleSheet.create({
   locationPriceView: {
     flex: 1,
     flexDirection: "column",
-    alignItems: "center",
+    alignItems: "center"
   },
   detailsButton: {
-    flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
     marginBottom: 10,
-    padding: 5,
-    width: 70,
     height: 40,
-    backgroundColor: colors.defaultBorder,
-    borderRadius: 20,
-  },
-  detailsTitle: {
-    fontSize: 14,
-    color: "white"
   }
 });

@@ -1,15 +1,25 @@
+import React from "react";
+import { connect } from "react-redux";
 import SignInScreen from "./sign-in-screen";
 // @ts-ignore
 import translate from "../../utils/i18n";
 import SignUpScreen from "./sign-up-screen/sign-up-screen";
 import ClientSignUpScreen from "./sign-up-screen/client-sign-up-screen";
 import AdminSignUpScreen from "./sign-up-screen/admin-sign-up-screen";
-import React from "react";
 import {createStackNavigator} from "@react-navigation/stack";
+import ProfileScreen from "../profile-screen";
 
 const AuthStack = createStackNavigator();
 
-const AuthScreens = () => {
+interface AuthScreensProps {
+  isLogged: boolean
+}
+
+const AuthScreens: React.FC<AuthScreensProps> = ({ isLogged = true }) => {
+
+  if (isLogged) {
+    return <ProfileScreen />
+  }
 
   return(
     <AuthStack.Navigator
@@ -41,5 +51,5 @@ const AuthScreens = () => {
   );
 };
 
-export default AuthScreens;
+export default (AuthScreens);
 

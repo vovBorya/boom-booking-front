@@ -11,7 +11,7 @@
     "orientation": "portrait",
     "splash": {
       "resizeMode": "contain",
-      "backgroundColor": "#cccccc"
+      "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0

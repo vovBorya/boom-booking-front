@@ -32,7 +32,7 @@ export default class OrderOptionsSwitch extends Component<OrderOptionsSwitchProp
       : styles.inactiveOptionTitle;
 
     return (
-      <View style={styles.container}>
+      <View style={styles.containerView}>
         <TouchableOpacity
           style={currentOrdersOptionStyle}
           onPress={this.props.onCurrentOrderOptionClick}
