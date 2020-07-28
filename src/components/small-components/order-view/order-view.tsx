@@ -1,6 +1,8 @@
 import React from "react";
 import {View, Text, ImageBackground, TouchableOpacity} from "react-native";
 import { styles } from "./order-view-styles";
+import {SmallOrangeButton} from "../small-orange-button/small-orange-button";
+import { values } from "../../../constants/values";
 
 type OrderViewPropsType = {
   key: number
@@ -24,8 +26,10 @@ const OrderView: React.FC<OrderViewPropsType> =
     price
    }) => {
 
+  const { TOUCHABLE_ACTIVITY_OPACITY } = values;
+
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity style={styles.containerView} activeOpacity={TOUCHABLE_ACTIVITY_OPACITY}>
       <ImageBackground
         source={{ uri: imageUrl }}
         style={styles.imageBackground}
@@ -65,9 +69,8 @@ const OrderView: React.FC<OrderViewPropsType> =
             </View>
           </View>
 
-          <TouchableOpacity style={styles.detailsButton}>
-            <Text style={styles.detailsTitle}>Details</Text>
-          </TouchableOpacity>
+          {/*<SmallOrangeButton style={styles.detailsButton} text="Details" />*/}
+
         </View>
       </ImageBackground>
     </TouchableOpacity>

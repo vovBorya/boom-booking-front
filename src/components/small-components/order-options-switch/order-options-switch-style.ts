@@ -2,7 +2,7 @@ import { StyleSheet } from "react-native";
 import {colors} from "../../../resources/colors";
 
 export const styles = StyleSheet.create({
-  container: {
+  containerView: {
     flex: 1,
     flexDirection: "row",
     margin: 10

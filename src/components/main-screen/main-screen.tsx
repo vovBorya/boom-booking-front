@@ -9,13 +9,13 @@ import Spinner from "../small-components/loader";
 import ItemList from "../small-components/item-list";
 import MainHeader from "../small-components/main-header";
 
-type MainScreenStateType = {
+interface MainScreenState {
   loading: boolean
   error: any
-  date: any
+  data: any
 }
 
-export default class MainScreen extends React.Component<any, MainScreenStateType> {
+export default class MainScreen extends React.Component<any, MainScreenState> {
 
   /*const { loading, error, date } = useQuery(RESTAURANTS_AND_EVENTS, {
     variables: {"restaurantSearchOptions": {},

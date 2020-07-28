@@ -2,6 +2,7 @@ import { createStore } from "redux";
 import reducer from "./reducer";
 
 interface IGlobalState {
+  isLogged: boolean
   language: string,
   token: string,
   account: {
@@ -12,6 +13,7 @@ interface IGlobalState {
 }
 
 const  initialState: IGlobalState = {
+  isLogged: false,
   language: '',
   token: '',
   account: {

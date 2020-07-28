@@ -1337,9 +1337,9 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-replace-jsx-attribute-value/-/babel-plugin-replace-jsx-attribute-value-4.2.0.tgz#310ec0775de808a6a2e4fd4268c245fd734c1165"
     integrity sha512-U9m870Kqm0ko8beHawRXLGLvSi/ZMrl89gJ5BNcT452fAjtF2p4uRzXkdzvGJJJYBgx7BmqlDjBN/eCp5AAX2w==
   
-  "@svgr/babel-plugin-svg-dynamic-title@^4.3.3":
+  "@svgr/babel-plugin-svg-dynamic-text@^4.3.3":
     version "4.3.3"
-    resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-svg-dynamic-title/-/babel-plugin-svg-dynamic-title-4.3.3.tgz#2cdedd747e5b1b29ed4c241e46256aac8110dd93"
+    resolved "https://registry.yarnpkg.com/@svgr/babel-plugin-svg-dynamic-text/-/babel-plugin-svg-dynamic-text-4.3.3.tgz#2cdedd747e5b1b29ed4c241e46256aac8110dd93"
     integrity sha512-w3Be6xUNdwgParsvxkkeZb545VhXEwjGMwExMVBIdPQJeyMQHqm9Msnb2a1teHBqUYL66qtwfhNkbj1iarCG7w==
   
   "@svgr/babel-plugin-svg-em-dimensions@^4.2.0":
@@ -1366,7 +1366,7 @@ Lockfile:
       "@svgr/babel-plugin-remove-jsx-attribute" "^4.2.0"
       "@svgr/babel-plugin-remove-jsx-empty-expression" "^4.2.0"
       "@svgr/babel-plugin-replace-jsx-attribute-value" "^4.2.0"
-      "@svgr/babel-plugin-svg-dynamic-title" "^4.3.3"
+      "@svgr/babel-plugin-svg-dynamic-text" "^4.3.3"
       "@svgr/babel-plugin-svg-em-dimensions" "^4.2.0"
       "@svgr/babel-plugin-transform-react-native-svg" "^4.2.0"
       "@svgr/babel-plugin-transform-svg-component" "^4.2.0"
